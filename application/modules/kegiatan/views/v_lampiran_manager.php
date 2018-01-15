@@ -1,0 +1,562 @@
+<script type="text/javascript" src="<?=base_url('assets/js/tables/datatables/datatables.min.js');?>"></script>
+<script type="text/javascript" src="<?=base_url('assets/js/sweetalert.js');?>"></script>
+<script type="text/javascript" src="<?=base_url('assets/js/forms/fileinput.js');?>"></script>
+<script type="text/javascript" src="<?=base_url('assets/js/pnotify.min.js');?>"></script>
+
+
+<div class="tab-pane active has-padding" id="arsip-publik">
+    <button type="button" id="btn-add" class="btn btn-sm btn-info">Tambah <i class="icon icon-plus2"></i></button>&nbsp;
+    <button type="button" id="btn-root" data-level="0" data-parent="" class="btn btn-sm btn-info">/</button>&nbsp;
+    <button type="button" id="btn-home" data-level="<?=$level;?>" data-parent="<?=$parent;?>" data-path="<?=$path;?>" class="btn btn-sm btn-info"><i class="icon-home2"></i></button>&nbsp;
+    <button type="button" id="btn-up" class="btn btn-sm btn-info"><i class="icon-folder-upload"></i></button>&nbsp;
+    <input type="hidden" name="level" id="level" value="<?=$level;?>" />
+    <input type="hidden" name="parent" id="parent" value="<?=$parent;?>" />
+    <input type="hidden" name="path" id="path" value="<?=$path;?>" />
+
+    <?php echo $this->table->generate(); ?>
+</div>
+
+<div id="mdl_add" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="modal_title" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="modal-title" class="modal-title">Tambah Data Arsip</h4>
+            </div>
+            <div class="modal-body">
+                <?=form_open_multipart('arsip/save', array('id' => 'frm-add', 'class' => 'form-horizontal'));?>
+                <input type="hidden" name="curr_parent" id="curr_parent">
+                <input type="hidden" name="curr_level" id="curr_level">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group file">
+                            <div class="col-sm-12">
+                                <input id="lampiran" name="lampiran[]" class="file-loading" type="file" multiple data-min-file-count="1">
+                                <div id="kv-error-2" style="margin-top:10px;display:none"></div>
+                                <div id="kv-success-2" class="alert alert-success fade in" style="margin-top:10px;display:none"></div>
+                            </div>
+                        </div>
+                        <div class="form-group folder" style="display: none;">
+                            <label class="control-label col-sm-4">Nama Folder <span class="text-danger">*</span></label>
+                            <div class="col-sm-8">
+                                <input type="text" name="nm_folder" class="form-control" id="nm_folder" />
+                            </div>
+                        </div>
+                        <div class="form-group folder" style="display: none;">
+                            <label class="control-label col-sm-4">Deskripsi</label>
+                            <div class="col-sm-8">
+                                <textarea name="deskripsi" class="form-control" id="deskripsi"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?=form_close();?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="simpan-arsip" class="btn bg-blue btn-sm btn-labeled" style="display:none;"><b><i class="icon-floppy-disk"></i></b>Simpan</button>
+                <button type="button" class="btn btn-default btn-sm" id="btn-batal" data-dismiss="modal">Tutup</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="mdl_rename" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="modal_title" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="modal-title" class="modal-title">Ganti Nama Arsip</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">Nama Arsip <span class="text-danger">*</span></label>
+                            <div class="col-sm-8">
+                                <input type="hidden" name="rename_id" class="form-control" id="rename_id" />
+                                <input type="text" name="rename" class="form-control" id="rename" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="simpan-rename" class="btn bg-blue btn-sm btn-labeled"><b><i class="icon-floppy-disk"></i></b>Perbaharui</button>
+                <button type="button" class="btn btn-default btn-sm" id="btn-batal" data-dismiss="modal">Tutup</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="mdl_detail" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="modal_title" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="modal-title" class="modal-title">Detail Arsip</h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-sm" id="btn-batal" data-dismiss="modal">Tutup</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    'use Strict';
+    var oTable, basePath = '<?=$path;?>', baseUrl = '<?=base_url();?>', fspath = '<?=FSPATH.'arsip/';?>', user_id = '<?=$this->session->user_id;?>', level = '<?=$level;?>';
+
+    <?php if($this->session->flashdata('notif')): ?>
+    swal("<?=$this->session->flashdata('notif');?>", "", "<?=$this->session->flashdata('type');?>");
+    <?php endif; ?>
+</script>
+<script type="text/javascript">
+    /**
+     * Created by gudhel on 1/28/17.
+     */
+    function checkPath(path){
+        var pathLength = parseInt($.trim(basePath.length)),
+            destLength = parseInt($.trim(path.length));
+
+        if(destLength >= pathLength && path.substr(0,pathLength) == basePath)
+            $('#btn-add').show();
+        else
+            $('#btn-add').hide();
+    }
+
+    $(document).ready(function() {
+        oTable = $('#tbl-arsip').dataTable( {
+            "bProcessing": true,
+            "bServerSide": true,
+            "sAjaxSource": baseUrl + "arsip/dt_arsip",
+            "order": [[0,'asc']],
+            "bAutoWidth": false,
+            "sPaginationType": "full_numbers",
+            "bSort": true,
+            "dom": '<"datatable-header"fl><"datatable-scroll-lg"t><"datatable-footer"ip>',
+            "language": {
+                "search": '<span>Pencarian:</span> _INPUT_',
+                "lengthMenu": '<span>Show:</span> _MENU_',
+                "paginate": { 'first': 'Pertama', 'last': 'Terakhir', 'next': '&rarr;', 'previous': '&larr;' }
+            },
+            "lengthMenu": [ 10, 25, 50, 75, 100 ],
+            "fnInitComplete": function() {
+            },
+            "columns": [
+                {"data": 'kode', "sName": 'kode', "bVisible": false, "bSearchable": false},
+                {
+                    "data":"arsip",
+                    "sName":"arsip",
+                    "width": "35%",
+                    "render": function ( data, type, row ) {
+                        var result;
+
+                        if(type == 'display'){
+                            if(row.jenis_arsip == '0'){
+                                result = '<a href="javascript:void(0)" class="file text-info" onclick="window.open(\''+fspath+row.unit_kerja_id+'/'+row.filename+'\',\'_blank\');"><i class="icon icon-file-empty"></i>&nbsp;&nbsp;&nbsp;'+data+'</a>';
+                            } else {
+                                result = '<a href="javascript:void(0)" class="folder text-info" data-parent="'+row.kode+'" data-level="'+(parseInt(row.level)+1)+'"><i class="icon icon-folder-open"></i>&nbsp;&nbsp;&nbsp;'+data+'</a>';
+                            }
+                        } else {
+                            result = data;
+                        }
+
+                        return result;
+                    }
+                },
+                {"data":"deskripsi", "sName":"deskripsi", "width": "20%"},
+                {"data":"created", "sName":"created", "width": "15%"},
+                {"data":"modified", "sName":"modified", "width": "15%"},
+                {
+                    "data":"aksi",
+                    "class": "text-center",
+                    "sWidth":"5%",
+                    "render": function ( data, type, row ) {
+                        var result;
+                        if(row.user_id !== user_id){
+                            var btn = $(row.aksi);
+                            btn.find("ul.action_menu li:not(:first)").remove();
+                            result = '<ul class="icons-list">' + btn.html() + '</ul>';
+                        } else {
+                            result = data;
+                        }
+
+                        return result;
+                    }
+                }
+            ],
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'bSearchable':false,
+                    'aTargets': [ -1 ]
+                }
+            ],
+            "fnServerData": function(sSource, aoData, fnCallback) {
+                aoData.push({"name": "level", "value": $('#level').val()});
+                aoData.push({"name": "parent", "value": $('#parent').val()});
+                $.ajax
+                ({
+                    'dataType': 'json',
+                    'type'    : 'POST',
+                    'url'     : sSource,
+                    'data'    : aoData,
+                    'success' : fnCallback
+                });
+            }
+        });
+
+        $('.dataTables_filter input[type=search]').attr('placeholder','Pencarian...');
+
+        $('.dataTables_length select').select2({
+            minimumResultsForSearch: Infinity,
+            width: '60px'
+        });
+
+        $('#tbl-arsip').delegate('a.folder', 'click', function(e){
+            e.preventDefault();
+            var that = $(this), path = $('#path').val();
+
+            $('#level').val(that.data('level'));
+            $('#parent').val(that.data('parent'));
+            $('#path').val(path+','+that.data('parent'));
+
+            checkPath($('#path').val());
+
+            if(that.data('level') == '0'){
+                $('#btn-up').hide();
+            } else {
+                $('#btn-up').show();
+            }
+
+            oTable._fnAjaxUpdate();
+        }).delegate('a.rename-arsip', 'click', function(e){
+            var that = $(this);
+            e.preventDefault();
+
+            $('#rename_id').val(that.data('id'));
+            $('#rename').val(that.data('nama'));
+
+            $('#mdl_rename').modal('show');
+
+        }).delegate('a.detail-arsip', 'click', function(e){
+            var that = $(this);
+            e.preventDefault();
+
+            $.ajax({
+                type: "POST",
+                data: {id: that.data('id')},
+                url: baseUrl + "arsip/detail",
+                success: function(r){
+                    $('#mdl_detail').find('.modal-body').html(r);
+                    $('#mdl_detail').modal('show');
+                }
+            });
+
+        }).delegate('a.hapus-arsip', 'click', function(e){
+            var that = $(this);
+            e.preventDefault();
+
+            swal({
+                    title: "Konfirmasi Hapus Data",
+                    text: "Apakah anda yakin ingin menghapus data ini?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Hapus",
+                    cancelButtonText: "Batal",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm){
+                    if (isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            dataType: "json",
+                            url: baseUrl + "arsip/delete",
+                            data: {id: that.data('id'), jenis: that.data('jenis-arsip'), level: $('#level').val()},
+                            success: function(r){
+                                oTable._fnAjaxUpdate();
+                                swal(r.message, "", r.type);
+                            }
+                        });
+                    } else {
+                        swal("Batal", "Hapus data dibatalkan", "error");
+                    }
+                }
+            );
+        }).delegate('a.change-arsip', 'click', function(e){
+            var that = $(this);
+            e.preventDefault();
+
+            swal({
+                    title: "Konfirmasi Ubah Data",
+                    text: "Apakah anda yakin ingin mengubah arsip ini menjadi arsip saya?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Ubah",
+                    cancelButtonText: "Batal",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm){
+                    if (isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            dataType: "json",
+                            url: baseUrl + "arsip/change",
+                            data: {id: that.data('id'), publik: that.data('publik')},
+                            success: function(r){
+                                oTable._fnAjaxUpdate();
+                                swal(r.message, "", r.type);
+                            }
+                        });
+                    } else {
+                        swal("Batal", "Ubah data dibatalkan", "error");
+                    }
+                }
+            );
+        });
+
+
+
+        $('#btn-add').on('click', function(e) {
+            $('#mdl_add').modal('show');
+        });
+
+        $('#btn-root').on('click', function(e) {
+            var that = $(this).data();
+            $('#level').val('0');
+            $('#parent').val('');
+            $('#path').val('');
+
+            checkPath($('#path').val());
+
+            if($('#level').val() == '0'){
+                $('#btn-up').hide();
+            } else {
+                $('#btn-up').show();
+            }
+
+            oTable._fnAjaxUpdate();
+        });
+
+        $('#btn-home').on('click', function(e) {
+            e.preventDefault();
+            var that = $(this).data();
+            $('#level').val(that.level);
+            $('#parent').val(that.parent);
+            $('#path').val(that.path);
+
+            checkPath($('#path').val());
+
+            if($('#level').val() == '0'){
+                $('#btn-up').hide();
+            } else {
+                $('#btn-up').show();
+            }
+
+            oTable._fnAjaxUpdate();
+        });
+
+        $('#mdl_add').on('show.bs.modal', function(e){
+            $('#curr_level').val($('#level').val());
+            $('#curr_parent').val($('#parent').val());
+        });
+
+        $('#mdl_add').on('hidden.bs.modal', function(e){
+            clearForm();
+        });
+
+        $('#tbl-arsip').delegate('a.btn-delete', 'click', function(e){
+            e.preventDefault();
+            var id = $(this).data('id');
+            swal({
+                    title: "Konfirmasi Hapus Data",
+                    text: "Apakah anda yakin ingin menghapus data ini?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Hapus",
+                    cancelButtonText: "Batal",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm){
+                    if (isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            dataType: "json",
+                            url: baseUrl + "arsip/delete",
+                            data: {id: id},
+                            success: function(r){
+                                oTable._fnAjaxUpdate();
+                                swal(r.message, "", r.type);
+                            }
+                        });
+                    } else {
+                        swal("Batal", "Hapus data dibatalkan", "error");
+                    }
+                });
+        });
+
+        function clearForm(){
+            $('input:radio[name=tipe_arsip][value=1]').prop('checked', true);
+            $('input:radio[name=jenis_arsip][value=0]').prop('checked', true);
+            $('#frm-add').find('input[type=text],textarea').val('');
+            $('.fileinput-remove').click();
+            $('div.file').show();
+            $('div.folder').hide();
+            $('#simpan-arsip').hide();
+        }
+
+    });
+
+    $(function(){
+        if($('#level').val() == '0'){
+            $('#btn-up').hide();
+        } else {
+            $('#btn-up').show();
+        }
+
+        checkPath($('#path').val());
+
+        $('#btn-up').on('click', function(e){
+            e.preventDefault();
+            var level = parseInt($('#level').val()),
+                path  = $('#path').val(),
+                exp = path.split(','),
+                parent = exp[level-1];
+
+            $('#level').val(level - 1);
+            $('#parent').val(parent);
+
+            if($('#level').val() == '0'){
+                $('#path').val('');
+                $('#btn-up').hide();
+            } else {
+                var lastIndex = path.lastIndexOf(","),
+                    lastPath = path.substring(0, lastIndex);
+                $('#path').val(lastPath);
+                $('#btn-up').show();
+            }
+
+            checkPath($('#path').val());
+
+            oTable._fnAjaxUpdate();
+        });
+
+        $('input[type=radio][name=jenis_arsip]').change(function() {
+            if (this.value == '1') { // Folder
+                $('div.file').hide();
+                $('div.folder').show();
+                $('#simpan-arsip').show();
+            }
+            else if (this.value == '0') {
+                $('div.folder').hide();
+                $('div.file').show();
+                $('#simpan-arsip').hide();
+            }
+        });
+
+        $('#simpan-arsip').on('click', function(e){
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                data: {
+                    parent: $('#curr_parent').val(),
+                    level:  $('#curr_level').val(),
+                    tipe_arsip: $('input[name=tipe_arsip]:checked').val(),
+                    nm_folder: $('#nm_folder').val(),
+                    deskripsi: $('#deskripsi').val()
+                },
+                url: $('#frm-add').attr('action'),
+                success: function(r){
+                    if(r.error == true){
+                        new PNotify({
+                            title: 'Error!',
+                            text: r.message,
+                            addclass: 'bg-danger'
+                        });
+                    } else {
+                        $('#mdl_add').modal('hide');
+                        oTable._fnAjaxUpdate();
+
+                        new PNotify({
+                            title: 'Sukses!',
+                            text: r.message,
+                            addclass: 'bg-success'
+                        });
+                    }
+                }
+            });
+        });
+
+        $('#simpan-rename').on('click', function(e){
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                data: {id: $('#rename_id').val(), arsip: $('#rename').val()},
+                url: baseUrl + "arsip/rename",
+                success: function(r){
+                    if(r.error == true){
+                        new PNotify({
+                            title: 'Error!',
+                            text: r.message,
+                            addclass: 'bg-danger'
+                        });
+                    } else {
+                        $('#mdl_rename').modal('hide');
+
+                        oTable._fnAjaxUpdate();
+
+                        new PNotify({
+                            title: 'Sukses!',
+                            text: r.message,
+                            addclass: 'bg-success'
+                        });
+                    }
+                }
+            });
+        });
+
+        $('#lampiran').fileinput({
+            uploadUrl: baseUrl + "arsip/upload_file", // server upload action
+            uploadAsync: false,
+            minFileCount: 1,
+            maxFileCount: 5,
+            uploadExtraData: function() {
+                var obj = {}
+                obj['parent']       = $('#curr_parent').val();
+                obj['level']        = $('#curr_level').val();
+                obj['is_public']    = $('input[name=tipe_arsip]:checked').val();
+                return obj;
+            },
+            showPreview: false,
+            allowedFileExtensions: ['jpg','png','xls','xlsx','pdf','ppt','pptx','doc','docx'],
+            elErrorContainer: '#kv-error-2'
+        }).on('filebatchpreupload', function(event, data, id, index) {
+            $('#kv-success-2').html('<h4>Status Upload</h4><ul></ul>').hide();
+        }).on('filebatchuploadsuccess', function(event, data) {
+            var out = '';
+            $.each(data.files, function(key, file) {
+                var fname = file.name;
+                out = out + '<li>' + 'File terupload file # ' + (key + 1) + ' - '  +  fname + ' dengan sukses.' + '</li>';
+            });
+            $('#kv-success-2 ul').append(out);
+            $('#kv-success-2').fadeIn('slow');
+
+            $('#mdl_add').modal('hide');
+            oTable._fnAjaxUpdate();
+        });
+
+    });
+</script>
