@@ -12,6 +12,7 @@
 
         //view pelanggan
         $("#pelanggan-view").hide();
+        $("#struk-kasir").hide();
 
         $("#pelanggan-btn-view").click(function () {
             $("#pelanggan-view").show();
@@ -26,6 +27,9 @@
 
         $("#pelanggan-btn-view").html("<i class='fa fa-user'></i>Pelanggan");
         $("#pelanggan-btn-view").val("Pelanggan");
+
+        $("#pelanggan-btn-view2").html("<i class='fa fa-user'></i><span class='js_customer_name'>Pelanggan</span>");
+        $("#pelanggan-btn-view2").val("Pelanggan");
 
         //view Pembayaran
         $('#pembayaran-view').hide();
@@ -705,10 +709,7 @@
                                 </section>
 
                                 <div class="payment-buttons">
-                                    <div class="button js_set_customer">
-                                        <i class="fa fa-user"></i>
-                                        <span class="js_customer_name">Pelanggan</span>
-                                    </div>
+                                    <div class="button js_set_customer" id="pelanggan-btn-view2"></div>
                                     <!--<div class="button js_invoice  ">
                                         <i class="fa fa-file-text-o"></i> Tagihan
                                     </div>-->
@@ -723,6 +724,111 @@
 </div>
 <!--  End of View Transaksi  -->
 
+<!-- View Struk Kasir  -->
+
+<div class="pos-content" id="struk-kasir">
+
+    <div class="window">
+        <div class="subwindow">
+            <div class="subwindow-container">
+                    <div class="receipt-screen screen">
+                        <div class="screen-content">
+                            <div class="top-content">
+                                <h1>Kembalian: <span class="change-value">Rp 0,00</span></h1>
+                    <span class="button next highlight">
+                        Pesanan Berikutnya
+                        <i class="fa fa-angle-double-right"></i>
+                    </span>
+                            </div>
+                            <div class="centered-content touch-scrollable">
+                                <div class="button print">
+                                    <i class="fa fa-print"></i> Cetakan tanda terima
+                                </div>
+                                <div class="pos-receipt-container">
+                                    <div class="pos-sale-ticket">
+
+                                        <div class="pos-center-align">03/01/2018 22:36:20 Pesanan00002-021-0004</div>
+                                        <br>
+                                        LABKESDA<br>
+                                        <div class="receipt-phone">
+                                            Telepon <br>
+                                        </div>
+                                        <div class="receipt-user">
+                                            Pengguna: Administrator<br>
+                                        </div>
+                                        <br>
+
+                                        <table class="receipt-orderlines">
+                                            <colgroup>
+                                                <col width="50%">
+                                                <col width="25%">
+                                                <col width="25%">
+                                            </colgroup>
+                                            <tbody><tr>
+                                                <td>
+                                                    Air Raksa
+
+                                                </td>
+                                                <td class="pos-right-align">
+                                                    1,000
+                                                </td>
+                                                <td class="pos-right-align">
+                                                    Rp 0,00
+                                                </td>
+                                            </tr><tr>
+                                                <td>
+                                                    AKK
+
+                                                </td>
+                                                <td class="pos-right-align">
+                                                    1,000
+                                                </td>
+                                                <td class="pos-right-align">
+                                                    Rp 0,00
+                                                </td>
+                                            </tr>
+                                            </tbody></table>
+                                        <br>
+                                        <table class="receipt-total">
+                                            <tbody><tr>
+                                                <td>Sub Total</td>
+                                                <td class="pos-right-align">
+                                                    Rp 0,00
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+
+                                            </tr>
+                                            <tr class="emph">
+                                                <td>Total:</td>
+                                                <td class="pos-right-align">
+                                                    Rp 0,00
+                                                </td>
+                                            </tr>
+                                            </tbody></table>
+                                        <br>
+                                        <table class="receipt-paymentlines">
+
+                                        </table>
+                                        <br>
+                                        <table class="receipt-change">
+                                            <tbody><tr><td>Kembalian:</td><td class="pos-right-align">
+                                                    Rp 0,00
+                                                </td></tr>
+                                            </tbody></table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of View Struk Kasir  -->
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>

@@ -97,7 +97,7 @@ class M_pos extends CI_Model {
         $detik = date("s");
         $menit = date("i");
 
-        $text = "SELECT max(trkasir_id) as kode FROM trkasir_temp";
+        $text = "SELECT max(trkasir_id) as kode FROM trkasir_header";
         $data = $this->m_pos->manualQuery($text);
         if($data->num_rows() > 0 ){
             foreach($data->result() as $t){

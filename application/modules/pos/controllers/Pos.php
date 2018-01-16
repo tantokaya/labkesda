@@ -277,6 +277,8 @@ class Pos extends MX_Controller {
         $data_h['bayar']            = $this->input->post('bayar', true);
         $data_h['kembali']          = $this->input->post('kembali', true);
         $data_h['cara_bayar']       = $this->input->post('cara_bayar', true);
+        $data_h['pelanggan']        = $this->input->post('pelanggan', true);
+        $data_h['status']           = '1';
 
         $data_h['modified_by']      = $this->session->nama;
         $data_h['mtime']            = $mtime_now;

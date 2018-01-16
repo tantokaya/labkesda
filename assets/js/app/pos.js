@@ -232,12 +232,15 @@ $(document).ready(function(){
  //    Validasi Pembayaran
 
     $('#validasi').click(function(){
-       if(kembali < 0){
-           alert('Bayarnya kurang, Ulangi !!!')
+
+        //alert($('#pelanggan-btn-view2').val());
+        if(kembali < 0){
+           alert('Bayarnya kurang dan pelanggan kosong, Ulangi !!!')
            $('#ttl_bayar_input').focus();
        }else{
+           //var pelanggan = $('.js_customer_name').html();
 
-           //alert($('#trkasir_id').val() + ' ' + $("#total_beli").data('gtotal')+' '+$("#ttl_bayar_input").val()+' '+kembali +' '+$('#metode').html());
+           //alert(pelanggan +' '+$('#trkasir_id').val() + ' ' + $("#total_beli").data('gtotal')+' '+$("#ttl_bayar_input").val()+' '+kembali +' '+$('#metode').html());
            // Insert Table Header
            $.ajax({
                type	: 'POST',
@@ -247,11 +250,15 @@ $(document).ready(function(){
                    total: $('#total_beli').data('gtotal'),
                    bayar: $('#ttl_bayar_input').val(),
                    kembali: kembali,
-                   cara_bayar: $('#metode').html()
+                   cara_bayar: $('#metode').html(),
+                   pelanggan: $('#pelanggan-btn-view2').val()
                },
                cache	: false,
                success	: function(data){
-                   window.location.reload();
+                   $('#struk-kasir').show();
+                   $("#pelanggan-view").hide();
+                   $("#kasir-view").hide();
+                   $("#pembayaran-view").hide();
                }
            });
        }

@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2b57407-f376-468f-aa4e-05fb84732308" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/pos/models/M_pos.php" afterPath="$PROJECT_DIR$/application/modules/pos/models/M_pos.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/pos/controllers/Pos.php" afterPath="$PROJECT_DIR$/application/modules/pos/controllers/Pos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/pos/pos.css" afterPath="$PROJECT_DIR$/assets/pos/pos.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/app/pos.js" afterPath="$PROJECT_DIR$/assets/js/app/pos.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/pos/views/v_pos.php" afterPath="$PROJECT_DIR$/application/modules/pos/views/v_pos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="papan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,14 +37,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pos.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Pos.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/pos/controllers/Pos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14359862">
-              <caret line="269" column="9" selection-start-line="269" selection-start-column="9" selection-end-line="269" selection-end-column="9" />
+            <state vertical-scroll-proportion="-9.791667">
+              <caret line="279" column="67" selection-start-line="279" selection-start-column="67" selection-end-line="279" selection-end-column="67" />
               <folding>
-                <marker date="1516073093681" expanded="true" signature="10059:10118" placeholder="SELECT * FRO..trgudang_in_detail..." />
-                <marker date="1516073093681" expanded="true" signature="12445:12511" placeholder="SELECT * FRO..trkasir_detail..." />
+                <marker date="1516077693579" expanded="true" signature="10059:10118" placeholder="SELECT * FRO..trgudang_in_detail..." />
+                <marker date="1516077693579" expanded="true" signature="12565:12631" placeholder="SELECT * FRO..trkasir_detail..." />
               </folding>
             </state>
           </provider>
@@ -55,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/assets/js/app/pos.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="253" column="19" selection-start-line="253" selection-start-column="19" selection-end-line="253" selection-end-column="19" />
+              <caret line="253" column="61" selection-start-line="253" selection-start-column="61" selection-end-line="253" selection-end-column="61" />
               <folding>
                 <element signature="e#0#52#0" expanded="false" />
               </folding>
@@ -63,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="v_pos.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="v_pos.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-49.117645">
-              <caret line="167" column="97" selection-start-line="167" selection-start-column="87" selection-end-line="167" selection-end-column="97" />
+            <state vertical-scroll-proportion="18.114187">
+              <caret line="711" column="97" selection-start-line="711" selection-start-column="97" selection-end-line="711" selection-end-column="97" />
               <folding>
                 <element signature="n#style#0;n#tr#0;n#table#0;n#div#1;n#section#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#tr#1;n#table#0;n#div#1;n#section#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
@@ -99,10 +98,11 @@
       <file leaf-file-name="M_pos.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/pos/models/M_pos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+            <state vertical-scroll-proportion="-20.333334">
+              <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding>
-                <marker date="1516024124904" expanded="true" signature="2501:2549" placeholder="SELECT max(t..trkasir_temp..." />
+                <marker date="1516073945027" expanded="true" signature="2501:2545" placeholder="SELECT max(t..trkasir_temp..." />
+                <marker date="1516073945027" expanded="true" signature="2501:2551" placeholder="SELECT max(t..trkasir_header..." />
               </folding>
             </state>
           </provider>
@@ -165,8 +165,9 @@
         <option value="$PROJECT_DIR$/application/views/layouts/frontoffice.php" />
         <option value="$PROJECT_DIR$/application/modules/pos/views/bayar.php" />
         <option value="$PROJECT_DIR$/application/modules/pos/views/detail_masuk.php" />
-        <option value="$PROJECT_DIR$/application/modules/pos/models/M_pos.php" />
         <option value="$PROJECT_DIR$/assets/pos/pos.css" />
+        <option value="$PROJECT_DIR$/application/modules/pos/models/M_pos.php" />
+        <option value="$PROJECT_DIR$/application/modules/pos/views/comot.html" />
         <option value="$PROJECT_DIR$/application/modules/pos/views/v_pos.php" />
         <option value="$PROJECT_DIR$/assets/js/app/pos.js" />
         <option value="$PROJECT_DIR$/application/modules/pos/controllers/Pos.php" />
@@ -672,54 +673,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="status_pegawai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labkesda" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labkesda" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profil" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labkesda" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labkesda" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1426,16 +1379,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/modules/pos/models/M_pos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-          <folding>
-            <marker date="1516024124904" expanded="true" signature="2501:2549" placeholder="SELECT max(t..trkasir_temp..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/dashboard/controllers/Dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.875">
@@ -1736,16 +1679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pos/models/M_pos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-          <folding>
-            <marker date="1516024124904" expanded="true" signature="2501:2549" placeholder="SELECT max(t..trkasir_temp..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/pos/pos.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.185185">
@@ -1770,17 +1703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-49.117645">
-          <caret line="167" column="97" selection-start-line="167" selection-start-column="87" selection-end-line="167" selection-end-column="97" />
-          <folding>
-            <element signature="n#style#0;n#tr#0;n#table#0;n#div#1;n#section#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#1;n#table#0;n#div#1;n#section#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layouts/frontoffice.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8333335">
@@ -1789,23 +1711,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/app/pos.js">
+    <entry file="file://$PROJECT_DIR$/application/modules/pos/models/M_pos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="253" column="19" selection-start-line="253" selection-start-column="19" selection-end-line="253" selection-end-column="19" />
+        <state vertical-scroll-proportion="-20.333334">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding>
-            <element signature="e#0#52#0" expanded="false" />
+            <marker date="1516073945027" expanded="true" signature="2501:2545" placeholder="SELECT max(t..trkasir_temp..." />
+            <marker date="1516073945027" expanded="true" signature="2501:2551" placeholder="SELECT max(t..trkasir_header..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/pos/controllers/Pos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14359862">
-          <caret line="269" column="9" selection-start-line="269" selection-start-column="9" selection-end-line="269" selection-end-column="9" />
+        <state vertical-scroll-proportion="-9.791667">
+          <caret line="279" column="67" selection-start-line="279" selection-start-column="67" selection-end-line="279" selection-end-column="67" />
           <folding>
-            <marker date="1516073093681" expanded="true" signature="10059:10118" placeholder="SELECT * FRO..trgudang_in_detail..." />
-            <marker date="1516073093681" expanded="true" signature="12445:12511" placeholder="SELECT * FRO..trkasir_detail..." />
+            <marker date="1516077693579" expanded="true" signature="10059:10118" placeholder="SELECT * FRO..trgudang_in_detail..." />
+            <marker date="1516077693579" expanded="true" signature="12565:12631" placeholder="SELECT * FRO..trkasir_detail..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/app/pos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="253" column="61" selection-start-line="253" selection-start-column="61" selection-end-line="253" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#52#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="18.114187">
+          <caret line="711" column="97" selection-start-line="711" selection-start-column="97" selection-end-line="711" selection-end-column="97" />
+          <folding>
+            <element signature="n#style#0;n#tr#0;n#table#0;n#div#1;n#section#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#1;n#table#0;n#div#1;n#section#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
