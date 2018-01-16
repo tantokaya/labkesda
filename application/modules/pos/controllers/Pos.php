@@ -263,6 +263,40 @@ class Pos extends MX_Controller {
 
     }
 
+///    Update Transaksi Header
+
+    public function update_trxheader(){
+
+        #echo '<pre>'; print_r($this->input->post()); exit();
+        $this->db->trans_begin();
+
+        $mtime_now      = date('Y-m-d H:i:s');
+
+        // Simpan Tabel Header
+        $data_h['total']            = $this->input->post('total', true);
+        $data_h['bayar']            = $this->input->post('bayar', true);
+        $data_h['kembali']          = $this->input->post('kembali', true);
+        $data_h['cara_bayar']       = $this->input->post('cara_bayar', true);
+
+        $data_h['modified_by']      = $this->session->nama;
+        $data_h['mtime']            = $mtime_now;
+
+        $id_h['trkasir_id']         = $this->input->post('trkasir_id',true);
+
+        $this->m_pos->updateData("trkasir_header",$data_h,$id_h);
+
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            $message                        = "Data kasir gagal disimpan!";
+            $type                           = "error";
+        } else {
+            $this->db->trans_commit();
+            $message                        = "Data kasir berhasil disimpan!";
+            $type                           = "success";
+        }
+
+    }
+
     //show detail transaksi
     public function DataDetail($id=NULL)
     {

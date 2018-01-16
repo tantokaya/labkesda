@@ -35,6 +35,8 @@
             $("#kasir-view").hide();
             $("#pembayaran-view").show();
 
+            $(".total").html($('#total_beli').html());
+            $('.js_customer_name').html($('#pelanggan-btn-view').html());
 
         })
 
@@ -43,7 +45,14 @@
             $("#kasir-view").show();
             $("#pembayaran-view").hide();
         })
-
+        $('#pembayaran').hide();
+        $('.paymentmethods').click(function(){
+            $('.paymentlines-empty').hide() ;
+            $('#pembayaran').show();
+            $('#metode').html($('.paymentmethod').html());
+            $('#ttl_bayar').html($('.total').html());
+            $('#ttl_bayar_input').focus();
+        });
     });
 </script>
 
@@ -53,7 +62,6 @@
         <div class="subwindow">
             <div class="subwindow-container">
                 <div class="subwindow-container-fix screens">
-
                     <div class="product-screen screen">
                         <div class="leftpane">
                             <div class="window">
@@ -635,7 +643,7 @@
                                 <i class="fa fa-angle-double-left"></i>Kembali
                             </span>
                                 <h1>Pembayaran</h1>
-                            <span class="button next highlight">Validasi
+                            <span class="button next highlight" id="validasi">Validasi
                                 <i class="fa fa-angle-double-right"></i>
                             </span>
                             </div>
@@ -649,12 +657,26 @@
                                 </div>
                             </div>
                             <div class="right-content pc60 touch-scrollable scrollable-y">
-                            <section class="paymentlines-container"><div class="paymentlines-empty">
-                                        <div class="total"><input type="text" id="gtot"> </div>
-                                        <div class="message">
-                                            Silahkan Pilih metode pembayaran.
-                                        </div>
+                            <section class="paymentlines-container">
+                                <div class="paymentlines-empty">
+                                    <div class="total">Rp 0</div>
+                                    <div class="message">
+                                        Silahkan Pilih metode pembayaran.
                                     </div>
+                                </div>
+                                <div id="pembayaran">
+                                    <table class="table">
+                                        <tr style="font-weight: bold;">
+                                            <td>Total</td><td>Dibayar</td><td>Kembali</td><td>Metode</td>
+                                        </tr>
+                                        <tr style="background-color: mediumseagreen; color: whitesmoke;">
+                                            <td id="ttl_bayar"></td>
+                                            <td id="ttl_dibayar"><input type="text" id="ttl_bayar_input"></td>
+                                            <td id="kembalian"></td>
+                                            <td id="metode"></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </section>
                                 <section class="payment-numpad">
                                     <div class="numpad" style="width: 98%">

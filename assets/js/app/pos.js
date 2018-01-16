@@ -201,4 +201,62 @@ $(document).ready(function(){
 
     }
 
+    /* ------------------------------- HITUNG SELISIH ------------------------- */
+    $("#ttl_bayar_input").keyup(function(){
+        hitungBayar();
+    });
+
+    var kembali;
+
+    function hitungBayar(){
+        var jml_bayar   = parseInt($("#total_beli").data('gtotal'));
+        var bayar       = parseInt($("#ttl_bayar_input").val());
+
+        if(bayar < jml_bayar) {
+            $('#kembalian').attr('style','color: red; font-weight: bold; font-size: 14pt;');
+        }else {
+            $('#kembalian').removeAttr('style');
+        }
+
+        if(jml_bayar > 0  && bayar > 0){
+            kembali = bayar - jml_bayar;
+
+            $("#kembalian").html(kembali);
+        }else{
+            $("#kembalian").html(0);
+        }
+
+        //console.log(jml_bayar + ' ' + bayar + ' ' + kembali);
+    }
+
+ //    Validasi Pembayaran
+
+    $('#validasi').click(function(){
+       if(kembali < 0){
+           alert('Bayarnya kurang, Ulangi !!!')
+           $('#ttl_bayar_input').focus();
+       }else{
+
+           //alert($('#trkasir_id').val() + ' ' + $("#total_beli").data('gtotal')+' '+$("#ttl_bayar_input").val()+' '+kembali +' '+$('#metode').html());
+           // Insert Table Header
+           $.ajax({
+               type	: 'POST',
+               url		: baseUrl+'/pos/update_trxheader',
+               data	: {
+                   trkasir_id: $('#trkasir_id').val(),
+                   total: $('#total_beli').data('gtotal'),
+                   bayar: $('#ttl_bayar_input').val(),
+                   kembali: kembali,
+                   cara_bayar: $('#metode').html()
+               },
+               cache	: false,
+               success	: function(data){
+                   window.location.reload();
+               }
+           });
+       }
+
+
+    });
+
 });
