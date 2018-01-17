@@ -332,7 +332,7 @@ class Pos extends MX_Controller {
 
             #echo '<pre>'; print_r($id); exit();
 
-            $text = "SELECT * FROM mst_tindakan WHERE gol_tindakan_id ='$id'";
+            $text = "SELECT * FROM mst_tindakan WHERE gol_tindakan_id ='$id' ORDER BY tindakan";
             $d['data'] = $this->db->query($text);
 
             $d['trkasir_id'] = $this->input->post('trkasir_id');

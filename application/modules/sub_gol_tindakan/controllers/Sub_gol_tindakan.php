@@ -29,7 +29,7 @@ class Sub_gol_tindakan extends MX_Controller {
         $privileges         = explode(',',$d['priv']['privileges']);
 
         //set table id in table open tag
-        $tmpl = array('table_open' => '<table id="tbl-sub-gol-tindakan" width="100%" class="table table-striped table-responsive table-bordered datatable" >');
+        $tmpl = array('table_open' => '<table id="tbl-sub-gol-tindakan" width="100%" class="table table-striped table-hover table-responsive table-bordered datatable" >');
         $this->table->set_template($tmpl);
 
         if($privileges[1]==1 or $privileges[2]==1) {

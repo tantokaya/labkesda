@@ -161,7 +161,7 @@ $(document).ready(function(){
         var that = $(this);
 
         //$('#jualan').html(that.data('goltindid'));
-        //alert(that.data('goltindid'));
+        //alert('Mantab boss');
 
         $.ajax({
             type	: 'POST',

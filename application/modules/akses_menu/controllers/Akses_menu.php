@@ -29,7 +29,7 @@ class Akses_menu extends MX_Controller {
         $d['priv']          = $this->functions->check_priv2($this->uri->segment(1)); // priv btn exl editor
 
         //set table id in table open tag
-        $tmpl = array('table_open' => '<table id="tbl-akses-menu" width="100%" class="table table-striped table-responsive table-bordered datatable">');
+        $tmpl = array('table_open' => '<table id="tbl-akses-menu" width="100%" class="table table-striped table-hover table-responsive table-bordered datatable">');
         $this->table->set_template($tmpl);
 
         $this->table->set_heading('Akses Menu ID', 'Menu', 'Level', 'Read', 'Add', 'Edit', 'Delete');
