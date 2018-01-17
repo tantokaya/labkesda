@@ -44,4 +44,15 @@ class M_pelanggan extends CI_Model {
     function destroy($table,$key){
         $this->db->delete($table, $key);
     }
+
+    function generate_kode_rekmed($kd_pus) {
+        $this->db->select('max(substr(kd_rekmed,-6)) as jumlah');
+        $this->db->from('mst_pasien');
+
+        $result = $this->db->get()->row_array();
+
+        #echo $this->db->last_query(); exit;
+
+        return $kd_pus . '.' . str_pad((intval($result['jumlah']) + 1),6,'0', STR_PAD_LEFT);
+    }
 }

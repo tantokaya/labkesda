@@ -100,7 +100,7 @@ class Agama extends MX_Controller {
 
         #echo '<pre>'; print_r($d); exit;
 
-        $this->template->set_layout('backoffice')->title('Tambah Agama - Badan Ekonomi Kreatif Indonesia')->build('f_agama', $d);
+        $this->template->set_layout('backoffice')->title('Tambah Agama - Labkesda')->build('f_agama', $d);
 
     }
 
@@ -158,7 +158,7 @@ class Agama extends MX_Controller {
 
         #echo '<pre>'; print_r($d); exit;
 
-        $this->template->set_layout('backoffice')->title('Ubah Agama - Badan Ekonomi Kreatif Indonesia')->build('f_agama', $d);
+        $this->template->set_layout('backoffice')->title('Ubah Agama - Labkesda')->build('f_agama', $d);
 
     }
 

@@ -78,3 +78,6 @@ ul.user-info li a{color:#fff;}
 .sidebar .menu-list i {color: #90A4AE;}
 .sidebar .menu-list li>a:focus, .menu-list li>a:hover {background-color: #455A64;}
 .sidebar p.text-size-mini{line-height:22px;}
+input:focus, textarea:focus, select:focus {
+    background-color: #F3FF8E;
+}

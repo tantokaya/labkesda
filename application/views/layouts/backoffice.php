@@ -72,38 +72,6 @@
 </section>
 <!--/Page Container-->
 
-<ul class="fab-menu fab-menu-fixed fab-menu-bottom-right" data-fab-toggle="hover">
-    <li>
-        <a class="fab-menu-btn btn bg-info btn-float btn-rounded btn-icon">
-            <i class="fab-icon-open icon-plus2"></i>
-            <i class="fab-icon-close icon-cross2"></i>
-        </a>
-
-        <ul class="fab-menu-inner">
-            <li>
-                <div class="fab-label-visible" data-fab-label="Arsip Saya">
-                    <a href="<?=base_url('arsip/saya');?>" class="btn btn-default btn-rounded btn-icon btn-float">
-                        <i class="icon-folder"></i>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="fab-label-visible" data-fab-label="Arsip Publik">
-                    <a href="<?=base_url('arsip');?>" class="btn btn-default btn-rounded btn-icon btn-float">
-                        <i class="icon-folder-open"></i>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="fab-label-visible" data-fab-label="Tambah Kegiatan">
-                    <a href="<?=base_url('kegiatan/add');?>" class="btn btn-default btn-rounded btn-icon btn-float">
-                        <i class="icon-calendar52"></i>
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </li>
-</ul>
 
 <?php $this->load->view('partials/scripts'); ?>
 

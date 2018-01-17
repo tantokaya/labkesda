@@ -40,10 +40,10 @@ class Pos extends MX_Controller {
         $d['tgl_cetak']         = $mtime_now      = date('Y-m-d H:i:s');
 
         //set table id in table open tag
-        $tmpl = array('table_open' => '<table id="tbl-pelanggan" width="100%" class="table table-bordered table-striped" >');
+        $tmpl = array('table_open' => '<table id="tbl-pelanggan" width="100%" class="table table-hover table-bordered table-striped" >');
         $this->table->set_template($tmpl);
 
-        $this->table->set_heading('NIK', 'REKMED', 'NAMA', 'TGL LAHIR','ALAMAT','AKSI');
+        $this->table->set_heading('NIK', 'REKMED', 'NAMA', 'TGL LAHIR','ALAMAT');
 
         #echo '<pre>'; print_r($d); exit;
         $this->template->set_layout('frontoffice')->title('POS - Labkesda')->build('v_pos', $d);
@@ -52,6 +52,7 @@ class Pos extends MX_Controller {
 //////////////    Pelanggan View   ///////////////////////
 
     public function save_pelanggan(){
+        $ctime_now      = date('Y-m-d H:i:s');
 
         $this->db->trans_begin();
 
@@ -74,6 +75,7 @@ class Pos extends MX_Controller {
         $data['stmarital_id']       = !empty($this->input->post('stmarital_id', true))?$this->input->post('stmarital_id', true):NULL;
 
         $data['created_by']         = $this->session->nama;
+        $data['ctime']              = $ctime_now;
 
         $this->m_pos->save('mst_pasien', $data, true);
 
@@ -101,11 +103,11 @@ class Pos extends MX_Controller {
             ->from('mst_pasien');
         $this->datatables->edit_column('nm_lengkap', '<span class="btn-plg" data-kdrekmed="$1" data-nama="$2">$2</span>', 'kode,nm_lengkap');
 
-        $edit_button = '<li><a href="'.base_url('pasien/edit/$1').'"><i class="icon-pencil6"></i> Ubah</a></li>';
-        $delete_button =  '<li><a href="#" class="btn-delete" data-id="$1"><i class="icon-trash"></i> Hapus</a></li>';
-        $divider = '<li class="divider"></li>';
-
-        $this->datatables->add_column('aksi', '<ul class="icons-list"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a><ul class="dropdown-menu dropdown-menu-right">' . $edit_button . $divider . $delete_button . '</ul></li></ul>' , 'encode(kode)');
+//        $edit_button = '<li><a href="'.base_url('pasien/edit/$1').'"><i class="icon-pencil6"></i> Ubah</a></li>';
+//        $delete_button =  '<li><a href="#" class="btn-delete" data-id="$1"><i class="icon-trash"></i> Hapus</a></li>';
+//        $divider = '<li class="divider"></li>';
+//
+//        $this->datatables->add_column('aksi', '<ul class="icons-list"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a><ul class="dropdown-menu dropdown-menu-right">' . $edit_button . $divider . $delete_button . '</ul></li></ul>' , 'encode(kode)');
 
 
         echo $this->datatables->generate();
@@ -178,28 +180,7 @@ class Pos extends MX_Controller {
         echo json_encode($result);
     }
 
-    public function del_pelanggan(){
-        //$this->functions->check_access2($this->uri->segment(1), $this->uri->segment(2));
-        if(!$this->input->is_ajax_request()) show_404();
 
-        $id = decode($this->input->post('id', true));
-
-        $this->db->trans_begin();
-
-        $this->m_pos->destroy('mst_pasien', array('kd_rekmed' => $id));
-
-        if ($this->db->trans_status() === FALSE){
-            $this->db->trans_rollback();
-            $result['message']              = "Data pasien gagal dihapus!";
-            $result['type']                 = "error";
-        } else {
-            $this->db->trans_commit();
-            $result['message']              = "Data pasien berhasil dihapus!";
-            $result['type']                 = "success";
-        }
-
-        echo json_encode($result);
-    }
 
 //////////////    SIMPAN TRANSAKSI   ///////////////////////
 
