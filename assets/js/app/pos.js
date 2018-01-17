@@ -160,7 +160,8 @@ $(document).ready(function(){
         e.preventDefault();
         var that = $(this);
 
-        /*$('#jualan').html(that.data('tindakan'));*/
+        //$('#jualan').html(that.data('goltindid'));
+        //alert(that.data('goltindid'));
 
         $.ajax({
             type	: 'POST',
@@ -169,7 +170,8 @@ $(document).ready(function(){
                 id: that.data('kdtindakan'),
                 harga: that.data('tarif'),
                 trkasir_id: that.data('trkasirid'),
-                tindakan: that.data('tindakan')
+                tindakan: that.data('tindakan'),
+                gol_tindakan_id: that.data('goltindid')
               },
             cache	: false,
             success	: function(data){
@@ -200,6 +202,35 @@ $(document).ready(function(){
         });
 
     }
+
+   /* ------------  Tampilan Data per Kategori  ---------- */
+
+    $(".kategori").click(function(e){
+        e.preventDefault();
+        var that = $(this);
+        //var kode = that.data('goltind');
+        //var string = "kode="+kode;
+        //var trkasir_id = that.data('trkasirid');
+        //var string = "trkasirid="+trkasir_id;
+        //alert(kode);
+
+        $.ajax({
+            type	: 'POST',
+            url		: baseUrl+'/pos/DataperKategori',
+            data	: {
+                kode: that.data('goltind'),
+                trkasir_id: that.data('trkasirid')
+            },
+            cache	: false,
+            success	: function(data){
+                //alert(kode);
+                $('#tampil_perkategori').html(data);
+            }
+        });
+
+
+    });
+
 
     /* ------------------------------- HITUNG SELISIH ------------------------- */
     $("#ttl_bayar_input").keyup(function(){
@@ -233,8 +264,10 @@ $(document).ready(function(){
 
     $('#validasi').click(function(){
 
+        var pelanggan = $('#pelanggan-btn-view').val();
+
         //alert($('#pelanggan-btn-view2').val());
-        if(kembali < 0){
+        if(kembali < 0 | pelanggan == ''){
            alert('Bayarnya kurang dan pelanggan kosong, Ulangi !!!')
            $('#ttl_bayar_input').focus();
        }else{
@@ -251,7 +284,7 @@ $(document).ready(function(){
                    bayar: $('#ttl_bayar_input').val(),
                    kembali: kembali,
                    cara_bayar: $('#metode').html(),
-                   pelanggan: $('#pelanggan-btn-view2').val()
+                   pelanggan: $('#pelanggan-btn-view').val()
                },
                cache	: false,
                success	: function(data){
@@ -259,6 +292,8 @@ $(document).ready(function(){
                    $("#pelanggan-view").hide();
                    $("#kasir-view").hide();
                    $("#pembayaran-view").hide();
+
+                   $('.change-value').html(kembali);
                }
            });
        }

@@ -71,8 +71,8 @@ class M_pos extends CI_Model {
         return $this->db->get('mst_gol_tindakan')->result();
     }
 
-    function get_tindakan(){
-        return $this->db->get('mst_tindakan')->result();
+    function get_tindakan_lab(){
+        return $this->db->get_where('mst_tindakan',array('gol_tindakan_id' => 1))->result();
     }
 
     function get_crbayar(){

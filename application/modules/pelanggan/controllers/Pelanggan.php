@@ -21,66 +21,78 @@ class Pelanggan extends MX_Controller {
 
     public function index()
     {
-        $d['l_jenis_kelamin']   = $this->m_pelanggan->fetch('jenis_kelamin')->result_array();
-        $d['l_agama']           = $this->m_pelanggan->fetch('agama')->result_array();
-        $d['l_propinsi']        = $this->m_pelanggan->fetch('propinsi', NULL, 'propinsi ASC')->result();
-        $d['l_goldar']          = $this->m_pelanggan->fetch('mst_goldar', NULL, 'goldar_nama ASC')->result_array();
-        $d['l_pendidikan']      = $this->m_pelanggan->fetch('mst_pendidikan', NULL, 'pendidikan_nama ASC')->result_array();
-        $d['l_pekerjaan']       = $this->m_pelanggan->fetch('mst_pekerjaan', NULL, 'pekerjaan_nama ASC')->result_array();
-        $d['l_stmarital']       = $this->m_pelanggan->fetch('mst_stmarital', NULL, 'stmarital_nama ASC')->result_array();
+        $d['page_title']    = 'Pasien';
+        $d['menus']         = $this->functions->generate_menu();
+
+        $d['priv']          = $this->functions->check_priv2($this->uri->segment(1)); // priv btn exl editor
+        $privileges         = explode(',',$d['priv']['privileges']);
 
         //set table id in table open tag
-        $tmpl = array('table_open' => '<table id="tbl-pelanggan" width="100%" class="table table-bordered table-striped" >');
+        $tmpl = array('table_open' => '<table id="tbl-pelanggan" width="100%" class="table table-striped table-responsive table-bordered datatable" >');
         $this->table->set_template($tmpl);
 
-        $this->table->set_heading('NIK', 'REKMED', 'NAMA', 'TGL LAHIR','ALAMAT');
+        if($privileges[1]==1 or $privileges[2]==1) {
+            $this->table->set_heading('Kd Rekmed','NIK','Nama','Tgl Lahir','Alamat', 'Aksi');
+        } else {
+            $this->table->set_heading('Nama');
+        }
 
-        //      Simpan Form          //
+
+        $this->template->set_layout('backoffice')->title('Pelanggan - Labkesda')->build('v_pelanggan', $d);
+    }
+
+    public function dt_pelanggan(){
+        if(!$this->input->is_ajax_request()) show_404();
+
+        $edit_priv = $this->input->post('edit_priv', TRUE);
+        $delete_priv = $this->input->post('delete_priv', TRUE);
+
+        $this->datatables->select('kd_rekmed as kode,nik, nm_lengkap, DATE_FORMAT(tgl_lahir, "%d/%m/%Y") as tgl_lahir, alamat', FALSE)
+            ->from('mst_pasien');
+
+        $edit_button = ($edit_priv == 1) ? '<li><a href="'.base_url('pasien/edit/$1').'"><i class="icon-pencil6"></i> Ubah</a></li>' : '';
+        $delete_button = ($delete_priv == 1) ? '<li><a href="#" class="btn-delete" data-id="$1"><i class="icon-trash"></i> Hapus</a></li>' : '';
+        $divider = ($edit_priv == 1 && $delete_priv == 1)?'<li class="divider"></li>':'';
+
+        $this->datatables->add_column('aksi', '<ul class="icons-list"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a><ul class="dropdown-menu dropdown-menu-right">' . $edit_button . $divider . $delete_button . '</ul></li></ul>' , 'encode(kode)');
+
+        echo $this->datatables->generate();
+
+    }
+
+
+    public function add(){
+        $this->functions->check_access2($this->uri->segment(1), $this->uri->segment(2));
+
+        $d['page_title']    = 'Tambah Pelanggan / Pasien';
+        $d['menus']         = $this->functions->generate_menu();
+
+
+        $d['l_agama']           = $this->m_pelanggan->fetch('agama')->result_array();
+        $d['l_jenis_kelamin']   = $this->m_pelanggan->fetch('jenis_kelamin')->result_array();
+        $d['l_propinsi']        = $this->m_pelanggan->fetch('propinsi', NULL, 'propinsi ASC')->result();
+
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('nik', 'NIP', 'required|max_length[18]|is_natural_no_zero|is_unique[mst_pasien.nik]');
-        $this->form_validation->set_rules('nm_lengkap', 'Nama Lengkap', 'is_unique[mst_pasien.nm_lengkap]');
-        $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required');
-        $this->form_validation->set_rules('agama_id', 'Agama', 'required');
-        $this->form_validation->set_rules('jenis_kelamin_id', 'Jenis Kelamin', 'required');
-        $this->form_validation->set_rules('alamat', 'Alamat Pelanggan', 'required');
-        $this->form_validation->set_rules('propinsi_id', 'Propinsi', 'required');
-        $this->form_validation->set_rules('kecamatan_id', 'Kecamatan', 'required');
-        $this->form_validation->set_rules('kelurahan_id', 'Kelurahan', 'required');
+        $this->form_validation->set_rules('nm_lengkap', 'Nama Lengkap', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             // do nothing
         } else {
             $this->db->trans_begin();
 
-            $data['nik']                = $this->input->post('nik', true);
-            $data['nm_lengkap']         = !empty($this->input->post('nm_lengkap', true))?$this->input->post('nm_lengkap', true):NULL;
-            $data['tmp_lahir']          = ucwords(strtolower($this->input->post('tmp_lahir', true)));
-            $data['tgl_lahir']          = $this->functions->convert_date_sql($this->input->post('tgl_lahir', true));
-            $data['jk_id']              = $this->input->post('jenis_kelamin_id', true);
-            $data['agama_id']           = $this->input->post('agama_id', true);
-            $data['alamat']             = $this->input->post('alamat', true);
-            $data['propinsi_id']        = $this->input->post('propinsi_id', true);
-            $data['kecamatan_id']       = $this->input->post('kecamatan_id', true);
-            $data['kelurahan_id']       = $this->input->post('kelurahan_id', true);
-            $data['no_kk']              = !empty($this->input->post('no_kk', true))?$this->input->post('no_kk', true):NULL;
-            $data['nm_kk']              = !empty($this->input->post('nm_kk', true))?$this->input->post('nm_kk', true):NULL;
-            $data['goldar_id']          = !empty($this->input->post('goldar_id', true))?$this->input->post('goldar_id', true):NULL;
-            $data['pendidikan_id']      = !empty($this->input->post('pendidikan_id', true))?$this->input->post('pendidikan_id', true):NULL;
-            $data['pekerjaan_id']       = !empty($this->input->post('pekerjaan_id', true))?$this->input->post('pekerjaan_id', true):NULL;
-            $data['stmarital_id']       = !empty($this->input->post('stmarital_id', true))?$this->input->post('stmarital_id', true):NULL;
+            $data['nm_lengkap'] = $this->input->post('sub_gol_tind_nama', true);
+            $data['created_by']        = $this->session->nama;
 
-            $data['created_by']         = $this->session->nama;
-
-            $this->m_pelanggan->save('mst_pasien', $data, true);
+            $this->m_gol_tindakan->save('mst_gol_tindakan', $data, true);
 
             if ($this->db->trans_status() === FALSE){
                 $this->db->trans_rollback();
-                $message                        = "Data pelanggan gagal disimpan!";
+                $message                        = "Data sub gol tindakan gagal disimpan!";
                 $type                           = "error";
             } else {
                 $this->db->trans_commit();
-                $message                        = "Data pelanggan berhasil disimpan!";
+                $message                        = "Data sub gol tindakan berhasil disimpan!";
                 $type                           = "success";
             }
 
@@ -90,19 +102,13 @@ class Pelanggan extends MX_Controller {
         }
 
         #echo '<pre>'; print_r($d); exit;
-        $this->template->set_layout('frontoffice')->title('POS - Labkesda')->build('v_pelanggan', $d);
-    }
 
-    public function dt_pelanggan(){
-        if(!$this->input->is_ajax_request()) show_404();
-
-        $this->datatables->select("nik, kd_rekmed, nm_lengkap,
-        DATE_FORMAT(tgl_lahir, '%d/%m/%Y') as tgl_lahir, alamat", FALSE)
-            ->from('mst_pasien');
-
-        echo $this->datatables->generate();
+        $this->template->set_layout('backoffice')->title('Tambah Pelanggan - Labkesda')->build('f_pelanggan', $d);
 
     }
+
+    ///   File Lama
+
 
     public function get_list_kota(){
         if(!$this->input->is_ajax_request()) show_404();

@@ -39,8 +39,7 @@
             <div class="pos-topheader">
                 <div class="pos-branding">
                     <img class="pos-logo" src="<?= base_url('assets/pos/logo.png'); ?>">
-                <span class="username"><?=$user['nama'];?>
-                </span>
+                <span class="username"><?=$user['nama'];?></span>
                 </div>
                 <div class="pos-rightheader">
                     <div class="order-selector">

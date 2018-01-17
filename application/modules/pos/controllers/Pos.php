@@ -22,7 +22,7 @@ class Pos extends MX_Controller {
     public function index()
     {
         $d['gol_tindakan']      = $this->m_pos->get_gol_tindakan();
-        $d['tindakan']          = $this->m_pos->get_tindakan();
+        $d['tindakan']          = $this->m_pos->get_tindakan_lab();
         $d['crbayar']           = $this->m_pos->get_crbayar();
 
         $d['trkasir_id']        = $this->m_pos->GenerateTrxKasir();
@@ -36,6 +36,8 @@ class Pos extends MX_Controller {
         $d['l_pekerjaan']       = $this->m_pos->fetch('mst_pekerjaan', NULL, 'pekerjaan_nama ASC')->result_array();
         $d['l_stmarital']       = $this->m_pos->fetch('mst_stmarital', NULL, 'stmarital_nama ASC')->result_array();
 
+        //cetak struk
+        $d['tgl_cetak']         = $mtime_now      = date('Y-m-d H:i:s');
 
         //set table id in table open tag
         $tmpl = array('table_open' => '<table id="tbl-pelanggan" width="100%" class="table table-bordered table-striped" >');
@@ -211,6 +213,7 @@ class Pos extends MX_Controller {
         // Simpan Tabel Header
         $data_h['tgl_trkasir']        = $tgl_trans;
         $data_h['trkasir_id']         = $this->input->post('trkasir_id', true);
+        $data_h['gol_tindakan_id']    = $this->input->post('gol_tindakan_id', true);
 
         $data_h['created_by']         = $this->session->nama;
         $data_h['ctime']              = $ctime_now;
@@ -312,6 +315,31 @@ class Pos extends MX_Controller {
             $d['data'] = $this->db->query($text);
 
             $this->load->view('detail_masuk',$d);
+
+        }else{
+            header('location:'.base_url());
+        }
+
+    }
+
+    //show detail transaksi
+    public function DataperKategori($id=NULL)
+    {
+        $cek = $this->session->userdata('logged_in');
+        if(!empty($cek)){
+
+            $id     = $this->input->post('kode');
+
+            #echo '<pre>'; print_r($id); exit();
+
+            $text = "SELECT * FROM mst_tindakan WHERE gol_tindakan_id ='$id'";
+            $d['data'] = $this->db->query($text);
+
+            $d['trkasir_id'] = $this->input->post('trkasir_id');
+
+            #echo '<pre>'; print_r($d); exit();
+
+            $this->load->view('tindakan_perkategori',$d);
 
         }else{
             header('location:'.base_url());

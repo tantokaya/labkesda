@@ -13,6 +13,7 @@
         //view pelanggan
         $("#pelanggan-view").hide();
         $("#struk-kasir").hide();
+        $(".payment-buttons").hide();
 
         $("#pelanggan-btn-view").click(function () {
             $("#pelanggan-view").show();
@@ -26,10 +27,7 @@
 
 
         $("#pelanggan-btn-view").html("<i class='fa fa-user'></i>Pelanggan");
-        $("#pelanggan-btn-view").val("Pelanggan");
-
-        $("#pelanggan-btn-view2").html("<i class='fa fa-user'></i><span class='js_customer_name'>Pelanggan</span>");
-        $("#pelanggan-btn-view2").val("Pelanggan");
+        $("#pelanggan-btn-view").val();
 
         //view Pembayaran
         $('#pembayaran-view').hide();
@@ -40,7 +38,7 @@
             $("#pembayaran-view").show();
 
             $(".total").html($('#total_beli').html());
-            $('.js_customer_name').html($('#pelanggan-btn-view').html());
+            $('#nm-pelanggan').html($('#pelanggan-btn-view').html());
 
         })
 
@@ -56,7 +54,19 @@
             $('#metode').html($('.paymentmethod').html());
             $('#ttl_bayar').html($('.total').html());
             $('#ttl_bayar_input').focus();
+            $('.payment-buttons').show();
         });
+
+        $('#next_order').click(function(){
+           window.location.reload();
+        });
+
+        //data per Kategori
+        $('.kategori').click(function(){
+            $('#list-produk-start').hide();
+            $('#tampil_perkategori').show();
+        })
+
     });
 </script>
 
@@ -150,7 +160,7 @@
                                                 <div class="category-list-scroller touch-scrollable">
                                                     <div class="category-list simple">
                                                         <?php foreach ($gol_tindakan as $gt): ?>
-                                                            <span class="category-simple-button js-category-switch" data-goltind="<?= $gt->gol_tindakan_id; ?>"><?= $gt->gol_tindakan_nama; ?></span>
+                                                            <span class="category-simple-button js-category-switch kategori" data-goltind="<?= $gt->gol_tindakan_id; ?>" data-trkasirid="<?= $trkasir_id; ?>"><?= $gt->gol_tindakan_nama; ?></span>
                                                         <?php endforeach; ?>
                                                     </div>
                                                 </div>
@@ -163,23 +173,24 @@
                                         <div class="content-container">
                                             <div class="product-list-container">
                                                 <div class="product-list-scroller touch-scrollable">
-                                                    <div class="product-list">
+                                                    <div class="product-list" id="list-produk-start">
                                                         <?php foreach ($tindakan as $td): ?>
                                                             <span class="product product_btn" id="trx_product"
                                                                   data-kdtindakan="<?= $td->kd_tindakan; ?>"
                                                                   data-tarif="<?= $td->harga; ?>"
                                                                   data-tindakan="<?= $td->tindakan; ?>"
+                                                                  data-goltindid="<?= $td->gol_tindakan_id; ?>"
                                                                   data-trkasirid="<?= $trkasir_id; ?>">
                                                         <div class="product-img">
                                                             <!--                                                            <img src="-->
                                                             <? //= base_url('assets/pos/kosong.png'); ?><!--">-->
-                                                            <span
-                                                                class="price-tag"> Rp <?= number_format($td->harga); ?></span>
+                                                            <span class="price-tag"> Rp <?= number_format($td->harga); ?></span>
                                                         </div>
                                                         <div class="product-name"><?= $td->tindakan; ?></div>
                                                       </span>
                                                         <?php endforeach; ?>
                                                     </div>
+                                                    <div id="tampil_perkategori"></div>
                                                 </div>
                                       <span class="placeholder-ScrollbarWidget">
                                       </span>
@@ -344,12 +355,9 @@
                                                                        value="<?= isset($pelanggan['alamat']) ? $pelanggan['alamat'] : set_value('alamat'); ?>">
                                                             </div>
                                                             <div class="client-detail">
-                                                                <span class="label"
-                                                                      style="color: grey; font-size: medium;width: 20%;">Propinsi</span>
+                                                                <span class="label" style="color: grey; font-size: medium;width: 20%;">Propinsi</span>
                                                                 <?php $pelanggan['propinsi_id'] = isset($pelanggan['propinsi_id']) ? $pelanggan['propinsi_id'] : ''; ?>
-                                                                <select name="propinsi_id" style="height: 35px;"
-                                                                        id="propinsi_id" style="width:100%"
-                                                                        class="populate" required>
+                                                                <select name="propinsi_id" style="height: 35px; width:100%" id="propinsi_id" class="populate" required>
                                                                     <option></option>
                                                                     <?php foreach ($l_propinsi as $t): ?>
                                                                         <?php if ($pelanggan['propinsi_id'] == $t->propinsi_id): ?>
@@ -646,7 +654,7 @@
                             <span class="button back" id="pembayaran-btn-hide">
                                 <i class="fa fa-angle-double-left"></i>Kembali
                             </span>
-                                <h1>Pembayaran</h1>
+                                <h1>Pembayaran &nbsp;<span id="nm-pelanggan" style="font-size: 12pt;"></span></h1>
                             <span class="button next highlight" id="validasi">Validasi
                                 <i class="fa fa-angle-double-right"></i>
                             </span>
@@ -671,13 +679,14 @@
                                 <div id="pembayaran">
                                     <table class="table">
                                         <tr style="font-weight: bold;">
-                                            <td>Total</td><td>Dibayar</td><td>Kembali</td><td>Metode</td>
+                                            <td>Total</td><td>Dibayar</td><td>Kembali</td><td>Metode</td><td>Jenis</td>
                                         </tr>
                                         <tr style="background-color: mediumseagreen; color: whitesmoke;">
                                             <td id="ttl_bayar"></td>
                                             <td id="ttl_dibayar"><input type="text" id="ttl_bayar_input"></td>
                                             <td id="kembalian"></td>
                                             <td id="metode"></td>
+                                            <td id="gol_tindakan"></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -709,7 +718,12 @@
                                 </section>
 
                                 <div class="payment-buttons">
-                                    <div class="button js_set_customer" id="pelanggan-btn-view2"></div>
+                                    <?php foreach ($gol_tindakan as $gt): ?>
+                                    <div class="button js_set_customer">
+                                        <i class='fa fa-file-text-0'></i>
+                                        <span class='gol_id' data-golid="<?= $gt->gol_tindakan_id; ?>"><?= $gt->gol_tindakan_nama; ?></span>
+                                    </div>
+                                    <?php endforeach ?>
                                     <!--<div class="button js_invoice  ">
                                         <i class="fa fa-file-text-o"></i> Tagihan
                                     </div>-->
@@ -735,8 +749,7 @@
                         <div class="screen-content">
                             <div class="top-content">
                                 <h1>Kembalian: <span class="change-value">Rp 0,00</span></h1>
-                    <span class="button next highlight">
-                        Pesanan Berikutnya
+                    <span class="button next highlight" id="next_order">Pesanan Berikutnya
                         <i class="fa fa-angle-double-right"></i>
                     </span>
                             </div>
@@ -746,15 +759,12 @@
                                 </div>
                                 <div class="pos-receipt-container">
                                     <div class="pos-sale-ticket">
-
-                                        <div class="pos-center-align">03/01/2018 22:36:20 Pesanan00002-021-0004</div>
-                                        <br>
-                                        LABKESDA<br>
+                                        <div class="pos-center-align"><?= $tgl_cetak.'        '.$trkasir_id; ?> </div>
+                                        <br>LABKESDA<br>
                                         <div class="receipt-phone">
-                                            Telepon <br>
                                         </div>
                                         <div class="receipt-user">
-                                            Pengguna: Administrator<br>
+                                            <?= 'Pengguna : ';?><br>
                                         </div>
                                         <br>
 
@@ -764,60 +774,44 @@
                                                 <col width="25%">
                                                 <col width="25%">
                                             </colgroup>
-                                            <tbody><tr>
-                                                <td>
-                                                    Air Raksa
-
-                                                </td>
-                                                <td class="pos-right-align">
-                                                    1,000
-                                                </td>
-                                                <td class="pos-right-align">
-                                                    Rp 0,00
-                                                </td>
-                                            </tr><tr>
-                                                <td>
-                                                    AKK
-
-                                                </td>
-                                                <td class="pos-right-align">
-                                                    1,000
-                                                </td>
-                                                <td class="pos-right-align">
-                                                    Rp 0,00
-                                                </td>
+                                            <tbody>
+                                            <tr>
+                                                <td>Air Raksa</td>
+                                                <td class="pos-right-align">1,000</td>
+                                                <td class="pos-right-align">Rp 0,00</td>
                                             </tr>
-                                            </tbody></table>
+                                            <tr>
+                                                <td>AKK</td>
+                                                <td class="pos-right-align">1,000</td>
+                                                <td class="pos-right-align">Rp 0,00</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                         <br>
                                         <table class="receipt-total">
-                                            <tbody><tr>
-                                                <td>Sub Total</td>
-                                                <td class="pos-right-align">
-                                                    Rp 0,00
-                                                </td>
-                                            </tr>
-
+                                            <tbody>
                                             <tr>
-
+                                                <td>Sub Total</td>
+                                                <td class="pos-right-align">Rp 0,00</td>
                                             </tr>
                                             <tr class="emph">
                                                 <td>Total:</td>
-                                                <td class="pos-right-align">
-                                                    Rp 0,00
-                                                </td>
+                                                <td class="pos-right-align">Rp 0,00</td>
                                             </tr>
-                                            </tbody></table>
+                                            </tbody>
+                                        </table>
                                         <br>
                                         <table class="receipt-paymentlines">
 
                                         </table>
                                         <br>
                                         <table class="receipt-change">
-                                            <tbody><tr><td>Kembalian:</td><td class="pos-right-align">
-                                                    Rp 0,00
-                                                </td></tr>
-                                            </tbody></table>
-
+                                            <tbody>
+                                            <tr>
+                                                <td>Kembalian:</td><td class="pos-right-align">Rp 0,00</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
