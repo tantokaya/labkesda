@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2b57407-f376-468f-aa4e-05fb84732308" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/pos/pos.css" afterPath="$PROJECT_DIR$/assets/pos/pos.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/pos/views/v_pos.php" afterPath="$PROJECT_DIR$/application/modules/pos/views/v_pos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.rst" afterPath="$PROJECT_DIR$/readme.rst" />
     </list>
     <ignored path="papan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="v_pos.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="v_pos.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71034485">
+            <state vertical-scroll-proportion="-17.166666">
               <caret line="249" column="65" selection-start-line="249" selection-start-column="65" selection-end-line="249" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.rst" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.rst">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.1986755">
+              <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -86,7 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/modules/gol_tindakan/views/f_gol_tindakan.php" />
         <option value="$PROJECT_DIR$/application/modules/sub_gol_tindakan/models/M_sub_gol_tindakan.php" />
         <option value="$PROJECT_DIR$/application/modules/sub_gol_tindakan/views/v_sub_gol_tindakan.php" />
         <option value="$PROJECT_DIR$/application/modules/sub_gol_tindakan/views/f_sub_gol_tindakan.php" />
@@ -137,6 +145,7 @@
         <option value="$PROJECT_DIR$/assets/js/app/pelayanan.js" />
         <option value="$PROJECT_DIR$/application/modules/pos/views/v_pos.php" />
         <option value="$PROJECT_DIR$/assets/pos/pos.css" />
+        <option value="$PROJECT_DIR$/readme.rst" />
       </list>
     </option>
   </component>
@@ -830,13 +839,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/partials/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70069206">
-          <caret line="27" column="76" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/sub_gol_tindakan/views/v_sub_gol_tindakan.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="42.791668">
@@ -1284,8 +1286,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71034485">
+        <state vertical-scroll-proportion="-17.166666">
           <caret line="249" column="65" selection-start-line="249" selection-start-column="65" selection-end-line="249" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1986755">
+          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
           <folding />
         </state>
       </provider>
