@@ -62,33 +62,9 @@ class Auth extends MX_Controller {
                     $sess_data['nama']          = $user['nama'];
                     $sess_data['email']         = $user['email'];
                     $sess_data['avatar']        = $user['avatar'];
-                    $sess_data['unit_kerja']    = ($user['akses_id'] <= '1')?NULL:$user['unit_kerja_id'];
-                    $sess_data['jabatan']       = !empty($user['jabatan_id'])?$user['jabatan_id']:NULL;
 
                     $result['error'] = false;
 
-                    //TAMBAHAN NBS KE SESSION
-                    $mark = $this->auth_model->get_mark($sess_data['unit_kerja']);
-                    if($mark || $sess_data['akses_id'] == 1){
-                        if($this->session->akses_id == '2'){
-                            if($sess_data['jabatan'] == '00')
-                                $mark = 'K';
-                            else
-                                $mark = 'W';
-                        }
-                        $sess_data['mark'] = $mark;
-                    }else{
-                        $result['error'] = true;
-                        $result['message'] = 'Mark Tidak Ditemukan Di Unit Kerja, silahkan kontak admin';
-                    }
-
-                    $eselon = $this->auth_model->get_eselon($sess_data['user_id']);
-                    if($eselon || $sess_data['akses_id'] == 1){
-                        $sess_data['eselon'] = $eselon;
-                    }else{
-                        $result['error'] = true;
-                        $result['message'] = 'Eselon Tidak Ditemukan Di Data Pegawai, silahkan kontak admin';
-                    }
 
                     $this->session->set_userdata($sess_data);
 

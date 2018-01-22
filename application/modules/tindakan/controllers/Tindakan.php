@@ -74,6 +74,8 @@ class Tindakan extends MX_Controller {
         $d['l_gol_tindakan']        = $this->m_tindakan->fetch('mst_gol_tindakan')->result_array();
         $d['l_sub_gol_tindakan']    = $this->m_tindakan->fetch('mst_sub_gol_tind')->result_array();
 
+        #echo '<pre>'; print_r($data); exit;
+
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('tindakan', 'Tindakan', 'required');
@@ -89,11 +91,16 @@ class Tindakan extends MX_Controller {
             $data['gol_tindakan_id']    = $this->input->post('gol_tindakan_id', true);
             $data['sub_gol_tind_id']    = $this->input->post('sub_gol_tind_id', true);
             $data['singkatan']          = $this->input->post('singkatan', true);
+
+            $data['nilai_bawah']        = $this->input->post('n_bawah', true);
+            $data['nilai_atas']         = $this->input->post('n_atas', true);
+
             $data['n_rujukan']          = $this->input->post('n_rujukan', true);
             $data['harga_sarana']       = $this->input->post('harga_sarana', true);
             $data['harga']              = $this->input->post('harga', true);
-            $data['is_default']         = $this->input->post('publish', true);
+           // $data['is_default']         = $this->input->post('publish', true);
             $data['created_by']         = $this->session->nama;
+
 
             $this->m_tindakan->save('mst_tindakan', $data, true);
 
@@ -158,10 +165,12 @@ class Tindakan extends MX_Controller {
             $data['gol_tindakan_id']    = $this->input->post('gol_tindakan_id', true);
             $data['sub_gol_tind_id']    = $this->input->post('sub_gol_tind_id', true);
             $data['singkatan']          = $this->input->post('singkatan', true);
+            $data['nilai_bawah']        = $this->input->post('n_bawah', true);
+            $data['nilai_atas']         = $this->input->post('n_atas', true);
             $data['n_rujukan']          = $this->input->post('n_rujukan', true);
             $data['harga_sarana']       = $this->input->post('harga_sarana', true);
             $data['harga']              = $this->input->post('harga', true);
-            $data['is_default']         = $this->input->post('publish', true);
+            // $data['is_default']         = $this->input->post('publish', true);
             $data['modified_by']        = $this->session->nama;
 
             $this->db->trans_begin();

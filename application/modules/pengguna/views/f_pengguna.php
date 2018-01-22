@@ -65,21 +65,6 @@
                             </select>
                         </div>
                     </div>
-
-                    <div class="form-group" id="field_jabatan" style="display: none;">
-                        <label class="control-label col-sm-3">Jabatan<span class="text-danger">*</span></label>
-                        <div class="col-sm-8">
-                            <select name="jabatan_id" id="jabatan_id" style="width: 100%;" data-placeholder="-- Pilih Jabatan --"><?=isset($l_jabatan)?$l_jabatan:'';?></select>
-                        </div>
-                    </div>
-
-                    <div class="form-group" id="field_satker" style="display: none;">
-                        <label class="control-label col-sm-3">Satuan Kerja <span class="text-danger">*</span></label>
-                        <div class="col-sm-8">
-                            <select name="unit_kerja_id" id="unit_kerja_id" style="width: 100%;" data-placeholder="-- Pilih Satuan Kerja --"><?=isset($l_satker)?$l_satker:'';?></select>
-                        </div>
-                    </div>
-
                     <div class="form-group">
                         <label class="control-label col-sm-3">Upload Avatar</label>
                         <div class="col-sm-8">
@@ -114,7 +99,6 @@
 <script type="text/javascript">
     $(function(){
         $('#akses_id').select2({width: 'resolve'});
-        $('#unit_kerja_id, #jabatan_id').select2({width: 'resolve'});
 
         $('#userfile').uniform({
             wrapperClass: 'bg-info',
@@ -126,69 +110,6 @@
             $('#frm-pengguna').submit();
 
         });
-
-        $('#akses_id').on('change', function(e){
-            e.preventDefault();
-            var akses_id = $(this).val();
-
-            cek_akses(akses_id);
-        });
-
-        <?php if(validation_errors()): ?>
-            cek_akses($('#akses_id').val());
-        <?php endif; ?>
-
-        <?php if($this->uri->segment(2) == 'edit' && $user['akses_id'] >= '3'): ?>
-           $('#field_satker').show();
-        <?php endif; ?>
-
-        <?php if($this->uri->segment(2) == 'edit' && $user['akses_id'] >= '2'): ?>
-        $('#field_jabatan').show();
-        <?php endif; ?>
-
-        function cek_akses(akses_id){
-            if(akses_id == '2'){
-                get_list_jabatan(akses_id);
-                $('#field_jabatan').fadeIn('slow');
-                $('#field_satker').fadeOut('slow');
-
-            } else if(akses_id >= '3'){
-                $('#field_satker, #field_jabatan').fadeIn('slow');
-                get_list_satker(akses_id);
-                get_list_jabatan(akses_id);
-            } else {
-                $('#field_satker, #field_jabatan').fadeOut('slow');
-            }
-        }
-
-        function get_list_satker(id){
-            $.ajax({
-                type: 'POST',
-                url: '<?=base_url('pengguna/get_list_satker');?>',
-                data: {id: id},
-                success: function(res){
-                    $('#unit_kerja_id').html(res);
-                },
-                error: function(er){
-
-                }
-            });
-        }
-
-        function get_list_jabatan(id){
-            $.ajax({
-                type: 'POST',
-                url: '<?=base_url('pengguna/get_list_jabatan');?>',
-                data: {id: id},
-                success: function(res){
-                    $('#jabatan_id').html(res);
-                },
-                error: function(er){
-
-                }
-            });
-        }
-
     });
 </script>
 

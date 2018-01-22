@@ -54,7 +54,9 @@ class Pelanggan extends MX_Controller {
         $delete_button = ($delete_priv == 1) ? '<li><a href="'.base_url('delete/edit/$1').'" class="btn-delete" data-id="$1"><i class="icon-trash"></i> Hapus</a></li>' : '';
         $divider = ($edit_priv == 1 && $delete_priv == 1)?'<li class="divider"></li>':'';
 
-        $this->datatables->add_column('aksi', '<ul class="icons-list"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a><ul class="dropdown-menu dropdown-menu-right">' . $edit_button . $divider . $delete_button . '</ul></li></ul>' , 'encode(kode)');
+        $this->datatables->add_column('aksi', '<ul class="icons-list"><li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+            <ul class="dropdown-menu dropdown-menu-right">' . $edit_button . $divider . $delete_button . '</ul></li></ul>' , 'encode(kode)');
 
         echo $this->datatables->generate();
 

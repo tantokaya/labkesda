@@ -68,9 +68,21 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-4 col-sm-12">Nilai Rujukan</label>
-                    <div class="col-md-6 col-sm-12">
+                    <label class="control-label col-md-4 col-sm-12">Satuan</label>
+                    <div class="col-md-2 col-sm-12">
                         <input type="text" class="form-control" id="n_rujukan" name="n_rujukan" placeholder="..." value="<?=isset($tindakan['n_rujukan'])?$tindakan['n_rujukan']:set_value('n_rujukan');?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4 col-sm-12">Nilai Rujukan Bawah</label>
+                    <div class="col-md-4 col-sm-12">
+                        <input type="text" class="form-control" id="n_bawah" name="n_bawah" placeholder="..." value="<?=isset($tindakan['nilai_bawah'])?$tindakan['nilai_bawah']:set_value('nilai_bawah');?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4 col-sm-12">Nilai Rujukan Atas</label>
+                    <div class="col-md-4 col-sm-12">
+                        <input type="text" class="form-control" id="n_atas" name="n_atas" placeholder="..." value="<?=isset($tindakan['nilai_atas'])?$tindakan['nilai_atas']:set_value('nilai_atas');?>">
                     </div>
                 </div>
             </div>
@@ -87,29 +99,29 @@
                         <input type="text" class="form-control" id="harga" name="harga" placeholder="..." value="<?=isset($tindakan['harga'])?$tindakan['harga']:set_value('harga');?>">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-md-4 col-sm-12">Aktif</label>
-                    <div class="col-md-4 col-sm-12">
-                        <?php
-                        $publish = $tindakan['is_default'];
-                        if($publish==''||$publish=='0'){
-                            ?>
-                            <label class="radio-inline">
-                                <input type="radio"  id="publish" name="publish" value="1" > Ya
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio"  id="publish" name="publish" value="0" checked> Tidak
-                            </label>
-                        <?php } else { ?>
-                            <label class="radio-inline">
-                                <input type="radio"  id="publish" name="publish" value="1" checked> Ya
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio"  id="publish" name="publish" value="0"> Tidak
-                            </label>
-                        <?php } ?>
-                    </div>
-                </div>
+<!--                <div class="form-group">-->
+<!--                    <label class="control-label col-md-4 col-sm-12">Aktif</label>-->
+<!--                    <div class="col-md-4 col-sm-12">-->
+<!--                        --><?php
+//                        $publish = $tindakan['is_default'];
+//                        if($publish==''||$publish=='0'){
+//                            ?>
+<!--                            <label class="radio-inline">-->
+<!--                                <input type="radio"  id="publish" name="publish" value="1" > Ya-->
+<!--                            </label>-->
+<!--                            <label class="radio-inline">-->
+<!--                                <input type="radio"  id="publish" name="publish" value="0" checked> Tidak-->
+<!--                            </label>-->
+<!--                        --><?php //} else { ?>
+<!--                            <label class="radio-inline">-->
+<!--                                <input type="radio"  id="publish" name="publish" value="1" checked> Ya-->
+<!--                            </label>-->
+<!--                            <label class="radio-inline">-->
+<!--                                <input type="radio"  id="publish" name="publish" value="0"> Tidak-->
+<!--                            </label>-->
+<!--                        --><?php //} ?>
+<!--                    </div>-->
+<!--                </div>-->
             </div>
 
             <?=form_close();?>

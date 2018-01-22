@@ -90,15 +90,6 @@ class Pengguna extends MX_Controller {
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[user.email]');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]|matches[repassword]');
         $this->form_validation->set_rules('repassword', 'Re-Password', 'required');
-        $this->form_validation->set_rules('akses_id', 'Grup Pengguna', 'required');
-
-        if($this->input->post('akses_id') >= 2){
-            $this->form_validation->set_rules('jabatan_id', 'Jabatan', 'required');
-        }
-
-        if($this->input->post('akses_id') >= 3){
-            $this->form_validation->set_rules('unit_kerja_id', 'Satuan Kerja', 'required');
-        }
 
         if ($this->form_validation->run() == FALSE) {
             // do nothing
@@ -110,20 +101,6 @@ class Pengguna extends MX_Controller {
             //$data['nama']               = ucwords(strtolower($this->input->post('nama', true)));
             $data['nama']               = $this->input->post('nama', true);
             $data['akses_id']           = $this->input->post('akses_id', true);
-
-            //REVISI NBS
-           /* if($this->input->post('akses_id') == 2){
-                $data['unit_kerja_id']  = '00000000';
-                $data['jabatan_id']     = $this->input->post('jabatan_id', true);
-            }
-            elseif($this->input->post('akses_id') >= 3){
-                $data['unit_kerja_id']  = $this->input->post('unit_kerja_id', true);
-                $data['jabatan_id']     = $this->input->post('jabatan_id', true);
-            }*/
-
-            $data['unit_kerja_id']  = $this->input->post('unit_kerja_id', true);
-            $data['jabatan_id']     = $this->input->post('jabatan_id', true);
-            //--------
 
             $data['ctime']              = date('Y-m-d H:i:s');
             $data['created_by']         = $this->session->nama;
@@ -269,15 +246,6 @@ class Pengguna extends MX_Controller {
         }
 
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim'.$is_unique);
-        $this->form_validation->set_rules('akses_id', 'Grup Pengguna', 'required');
-
-        if($this->input->post('akses_id') >= 2){
-            $this->form_validation->set_rules('jabatan_id', 'Jabatan', 'required');
-        }
-
-        if($this->input->post('akses_id') >= 3){
-            $this->form_validation->set_rules('unit_kerja_id', 'Satuan Kerja', 'required');
-        }
 
         if ($this->form_validation->run() == FALSE) {
             // do nothing
@@ -293,13 +261,6 @@ class Pengguna extends MX_Controller {
             //$data['nama']               = ucwords(strtolower($this->input->post('nama', true)));
             $data['nama']               = $this->input->post('nama', true);
             $data['akses_id']           = $this->input->post('akses_id', true);
-
-            if($this->input->post('akses_id') == 2){
-                $data['unit_kerja_id']     = '00000000';
-            }
-            elseif($this->input->post('akses_id') >= 3){
-                $data['unit_kerja_id']     = $this->input->post('unit_kerja_id', true);
-            }
 
             $data['mtime']          = date('Y-m-d H:i:s');
             $data['modified_by']    = $this->session->nama;
