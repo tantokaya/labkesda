@@ -1,45 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2b57407-f376-468f-aa4e-05fb84732308" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/eksternal_peserta/controllers/Eksternal_peserta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/eksternal_peserta/models/M_eksternal_peserta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/eksternal_peserta/views/f_eksternal_peserta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/eksternal_peserta/views/v_eksternal_peserta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/eselon/controllers/Eselon.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/eselon/models/M_eselon.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/eselon/views/f_eselon.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/eselon/views/v_eselon.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/jenis_kegiatan/controllers/Jenis_kegiatan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/jenis_kegiatan/models/M_jenis_kegiatan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/jenis_kegiatan/views/f_jenis_kegiatan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/jenis_kegiatan/views/v_jenis_kegiatan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/jenis_laporan/controllers/Jenis_laporan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/jenis_laporan/models/M_jenis_laporan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/jenis_laporan/views/f_jenis_laporan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/jenis_laporan/views/v_jenis_laporan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/laporan_keuangan/controllers/Laporan_keuangan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/laporan_keuangan/models/M_laporan_keuangan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/laporan_keuangan/views/v_laporan_keuangan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/laporan_keuangan/views/v_list_lampiran.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/laporan_keuangan/views/validasi_laporan_keuangan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/laporan_tata_usaha/controllers/Laporan_tata_usaha.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/laporan_tata_usaha/models/M_laporan_tata_usaha.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/laporan_tata_usaha/views/v_laporan_tata_usaha.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/laporan_tata_usaha/views/v_list_lampiran.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/laporan_tata_usaha/views/validasi_laporan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/mak/controllers/Mak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/mak/models/M_mak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/mak/views/f_mak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/modules/mak/views/v_mak.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/auth/controllers/Auth.php" afterPath="$PROJECT_DIR$/application/modules/auth/controllers/Auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/pelanggan/controllers/Pelanggan.php" afterPath="$PROJECT_DIR$/application/modules/pelanggan/controllers/Pelanggan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/pengguna/controllers/Pengguna.php" afterPath="$PROJECT_DIR$/application/modules/pengguna/controllers/Pengguna.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/tindakan/controllers/Tindakan.php" afterPath="$PROJECT_DIR$/application/modules/tindakan/controllers/Tindakan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/pengguna/views/f_pengguna.php" afterPath="$PROJECT_DIR$/application/modules/pengguna/views/f_pengguna.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/tindakan/views/f_tindakan.php" afterPath="$PROJECT_DIR$/application/modules/tindakan/views/f_tindakan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="a2b57407-f376-468f-aa4e-05fb84732308" name="Default" comment="" />
     <ignored path="papan.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -60,65 +22,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="v_pelayanan.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/views/v_pelayanan.php">
+      <file leaf-file-name="Pos.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/modules/pos/controllers/Pos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.875">
-              <caret line="64" column="14" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
+            <state vertical-scroll-proportion="-23.916666">
+              <caret line="318" column="53" selection-start-line="318" selection-start-column="53" selection-end-line="318" selection-end-column="53" />
+              <folding>
+                <marker date="1516202877417" expanded="true" signature="9541:9600" placeholder="SELECT * FRO..trkasir_detail..." />
+                <marker date="1516202877417" expanded="true" signature="12047:12113" placeholder="SELECT * FRO..trkasir_detail..." />
+                <marker date="1516202877417" expanded="true" signature="12578:12651" placeholder="SELECT * FRO..mst_tindakan..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="v_pos.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-66.041664">
+              <caret line="739" column="49" selection-start-line="739" selection-start-column="49" selection-end-line="739" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pelayanan.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/controllers/Pelayanan.php">
+      <file leaf-file-name="pos.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/js/app/pos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.416667">
-              <caret line="302" column="80" selection-start-line="302" selection-start-column="80" selection-end-line="302" selection-end-column="80" />
-              <folding>
-                <marker date="1516592586196" expanded="true" signature="2621:2879" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="2642:2874" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="4258:4516" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="4279:4511" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="5965:6223" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="5986:6218" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="7682:7940" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="7703:7935" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="9592:9849" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="9613:9774" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="9613:9775" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="9613:9844" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="11253:11510" placeholder="..." />
-                <marker date="1516592586196" expanded="true" signature="11274:11505" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="f_pelayanan.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/views/f_pelayanan.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.916667">
-              <caret line="159" column="85" selection-start-line="159" selection-start-column="85" selection-end-line="159" selection-end-column="85" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#0;n#div#3;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pelayanan.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/js/app/pelayanan.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7268212">
-              <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.42880794">
+              <caret line="156" column="22" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="22" />
               <folding>
                 <element signature="e#0#52#0" expanded="false" />
               </folding>
@@ -188,10 +120,10 @@
         <option value="$PROJECT_DIR$/application/modules/pelayanan/views/riwayat_pdf.php" />
         <option value="$PROJECT_DIR$/application/modules/pelayanan/views/riwayat.php" />
         <option value="$PROJECT_DIR$/application/modules/pelayanan/views/v_modal_riwayat.php" />
-        <option value="$PROJECT_DIR$/application/modules/pelayanan/views/v_pelayanan.php" />
-        <option value="$PROJECT_DIR$/assets/js/app/pelayanan.js" />
         <option value="$PROJECT_DIR$/application/modules/pelayanan/controllers/Pelayanan.php" />
+        <option value="$PROJECT_DIR$/application/modules/pelayanan/views/v_pelayanan.php" />
         <option value="$PROJECT_DIR$/application/modules/pelayanan/views/f_pelayanan.php" />
+        <option value="$PROJECT_DIR$/assets/js/app/pelayanan.js" />
       </list>
     </option>
   </component>
@@ -583,6 +515,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labkesda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labkesda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1117,13 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pos/controllers/Pos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.282007">
-          <caret line="318" column="53" selection-start-line="318" selection-start-column="53" selection-end-line="318" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/pengguna/views/f_pengguna.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-28.458334">
@@ -1276,59 +1227,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/app/pos.js">
+    <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/controllers/Pelayanan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.4023178">
-          <caret line="177" column="30" selection-start-line="177" selection-start-column="26" selection-end-line="177" selection-end-column="30" />
+        <state vertical-scroll-proportion="-7.2916665">
+          <caret line="227" column="36" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="36" />
           <folding>
-            <element signature="e#0#52#0" expanded="false" />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="19.008621">
-          <caret line="739" column="49" selection-start-line="739" selection-start-column="49" selection-end-line="739" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/views/v_pelayanan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.875">
-          <caret line="64" column="14" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
+        <state vertical-scroll-proportion="-14.375">
+          <caret line="52" column="68" selection-start-line="52" selection-start-column="68" selection-end-line="52" selection-end-column="68" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/controllers/Pelayanan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.416667">
-          <caret line="302" column="80" selection-start-line="302" selection-start-column="80" selection-end-line="302" selection-end-column="80" />
-          <folding>
-            <marker date="1516592586196" expanded="true" signature="2621:2879" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="2642:2874" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="4258:4516" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="4279:4511" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="5965:6223" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="5986:6218" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="7682:7940" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="7703:7935" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="9592:9849" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="9613:9774" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="9613:9775" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="9613:9844" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="11253:11510" placeholder="..." />
-            <marker date="1516592586196" expanded="true" signature="11274:11505" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/views/f_pelayanan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.916667">
-          <caret line="159" column="85" selection-start-line="159" selection-start-column="85" selection-end-line="159" selection-end-column="85" />
+        <state vertical-scroll-proportion="-7.9166665">
+          <caret line="324" column="134" selection-start-line="324" selection-start-column="134" selection-end-line="324" selection-end-column="134" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
@@ -1344,8 +1279,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/app/pelayanan.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7268212">
-          <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.8509934">
+          <caret line="118" column="4" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#52#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pos/controllers/Pos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.916666">
+          <caret line="318" column="53" selection-start-line="318" selection-start-column="53" selection-end-line="318" selection-end-column="53" />
+          <folding>
+            <marker date="1516202877417" expanded="true" signature="9541:9600" placeholder="SELECT * FRO..trkasir_detail..." />
+            <marker date="1516202877417" expanded="true" signature="12047:12113" placeholder="SELECT * FRO..trkasir_detail..." />
+            <marker date="1516202877417" expanded="true" signature="12578:12651" placeholder="SELECT * FRO..mst_tindakan..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-66.041664">
+          <caret line="739" column="49" selection-start-line="739" selection-start-column="49" selection-end-line="739" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/app/pos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42880794">
+          <caret line="156" column="22" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="22" />
           <folding>
             <element signature="e#0#52#0" expanded="false" />
           </folding>
