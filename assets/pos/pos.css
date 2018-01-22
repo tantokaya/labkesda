@@ -4549,6 +4549,11 @@ td {
  margin-left: 120px;
 }
 
+.pos .clientlist-screen .button.new-customer-kesmas {
+ left: 50%;
+ margin-left: -20px;
+}
+
 .pos .order-container {
  position: absolute;
  top: 0px;

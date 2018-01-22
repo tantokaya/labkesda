@@ -247,8 +247,11 @@
                           <span class="button back" id="pelanggan-btn-hide">
                             <i class="fa fa-angle-double-left"></i> Kembali
                           </span>
+                          <span class="button new-customer-kesmas" id="tbl_pelanggan_show_k">
+                            <i class="fa fa-user"></i><i class="fa fa-plus"></i> Kesmas
+                          </span>
                           <span class="button new-customer" id="tbl_pelanggan_show">
-                            <i class="fa fa-user"></i><i class="fa fa-plus"></i>
+                            <i class="fa fa-user"></i><i class="fa fa-plus"></i> Lab
                           </span>
                           <span class="button new-customer" id="tbl_pelanggan_hide">
                             <i class="fa fa-user"></i><i class="fa fa-plus"></i>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2b57407-f376-468f-aa4e-05fb84732308" name="Default" comment="" />
+    <list default="true" id="a2b57407-f376-468f-aa4e-05fb84732308" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/pos/pos.css" afterPath="$PROJECT_DIR$/assets/pos/pos.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/pos/views/v_pos.php" afterPath="$PROJECT_DIR$/application/modules/pos/views/v_pos.php" />
+    </list>
     <ignored path="papan.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -36,21 +39,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="v_pos.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="v_pos.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-66.041664">
-              <caret line="739" column="49" selection-start-line="739" selection-start-column="49" selection-end-line="739" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.71034485">
+              <caret line="249" column="65" selection-start-line="249" selection-start-column="65" selection-end-line="249" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pos.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pos.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/pos/pos.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.2222223">
+              <caret line="4553" column="16" selection-start-line="4553" selection-start-column="16" selection-end-line="4553" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pos.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/app/pos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42880794">
-              <caret line="156" column="22" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="163" column="7" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
               <folding>
                 <element signature="e#0#52#0" expanded="false" />
               </folding>
@@ -91,7 +104,6 @@
         <option value="$PROJECT_DIR$/application/modules/pelanggan/views/v_pelanggan.php" />
         <option value="$PROJECT_DIR$/application/modules/pos/models/M_pos.php" />
         <option value="$PROJECT_DIR$/application/modules/pos/views/detail_masuk.php" />
-        <option value="$PROJECT_DIR$/assets/pos/pos.css" />
         <option value="$PROJECT_DIR$/assets/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/application/modules/gol_tindakan/controllers/Gol_tindakan.php" />
         <option value="$PROJECT_DIR$/application/modules/sub_gol_tindakan/controllers/Sub_gol_tindakan.php" />
@@ -102,7 +114,6 @@
         <option value="$PROJECT_DIR$/application/modules/pos/views/tindakan_perkategori.php" />
         <option value="$PROJECT_DIR$/assets/js/app/pos.js" />
         <option value="$PROJECT_DIR$/assets/css/layout.css" />
-        <option value="$PROJECT_DIR$/application/modules/pos/views/v_pos.php" />
         <option value="$PROJECT_DIR$/assets/pos/bootstrap.css" />
         <option value="$PROJECT_DIR$/application/modules/agama/controllers/Agama.php" />
         <option value="$PROJECT_DIR$/application/modules/pos/controllers/Pos.php" />
@@ -124,6 +135,8 @@
         <option value="$PROJECT_DIR$/application/modules/pelayanan/views/v_pelayanan.php" />
         <option value="$PROJECT_DIR$/application/modules/pelayanan/views/f_pelayanan.php" />
         <option value="$PROJECT_DIR$/assets/js/app/pelayanan.js" />
+        <option value="$PROJECT_DIR$/application/modules/pos/views/v_pos.php" />
+        <option value="$PROJECT_DIR$/assets/pos/pos.css" />
       </list>
     </option>
   </component>
@@ -215,46 +228,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labkesda" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labkesda" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labkesda" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labkesda" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1134,14 +1107,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/pos/pos.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44867548">
-          <caret line="5310" column="30" selection-start-line="5308" selection-start-column="0" selection-end-line="5310" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/printarea/PrintArea.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5033113">
@@ -1299,21 +1264,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
+    <entry file="file://$PROJECT_DIR$/assets/pos/pos.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-66.041664">
-          <caret line="739" column="49" selection-start-line="739" selection-start-column="49" selection-end-line="739" selection-end-column="49" />
+        <state vertical-scroll-proportion="-5.2222223">
+          <caret line="4553" column="16" selection-start-line="4553" selection-start-column="16" selection-end-line="4553" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/app/pos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42880794">
-          <caret line="156" column="22" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="163" column="7" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
           <folding>
             <element signature="e#0#52#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71034485">
+          <caret line="249" column="65" selection-start-line="249" selection-start-column="65" selection-end-line="249" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
