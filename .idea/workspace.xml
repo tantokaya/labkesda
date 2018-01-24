@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2b57407-f376-468f-aa4e-05fb84732308" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.rst" afterPath="$PROJECT_DIR$/readme.rst" />
-    </list>
+    <list default="true" id="a2b57407-f376-468f-aa4e-05fb84732308" name="Default" comment="" />
     <ignored path="papan.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -23,64 +21,7 @@
     <favorites_list name="papan" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Pos.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/modules/pos/controllers/Pos.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.916666">
-              <caret line="318" column="53" selection-start-line="318" selection-start-column="53" selection-end-line="318" selection-end-column="53" />
-              <folding>
-                <marker date="1516202877417" expanded="true" signature="9541:9600" placeholder="SELECT * FRO..trkasir_detail..." />
-                <marker date="1516202877417" expanded="true" signature="12047:12113" placeholder="SELECT * FRO..trkasir_detail..." />
-                <marker date="1516202877417" expanded="true" signature="12578:12651" placeholder="SELECT * FRO..mst_tindakan..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="v_pos.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.166666">
-              <caret line="249" column="65" selection-start-line="249" selection-start-column="65" selection-end-line="249" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readme.rst" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/readme.rst">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76986754">
-              <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pos.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/pos/pos.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.2222223">
-              <caret line="4553" column="16" selection-start-line="4553" selection-start-column="16" selection-end-line="4553" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pos.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/app/pos.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="163" column="7" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#52#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,7 +36,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/modules/sub_gol_tindakan/models/M_sub_gol_tindakan.php" />
         <option value="$PROJECT_DIR$/application/modules/sub_gol_tindakan/views/v_sub_gol_tindakan.php" />
         <option value="$PROJECT_DIR$/application/modules/sub_gol_tindakan/views/f_sub_gol_tindakan.php" />
         <option value="$PROJECT_DIR$/application/modules/tindakan/models/M_tindakan.php" />
@@ -137,15 +77,16 @@
         <option value="$PROJECT_DIR$/application/views/layouts/backoffice.php" />
         <option value="$PROJECT_DIR$/assets/js/printarea/PrintArea.css" />
         <option value="$PROJECT_DIR$/application/modules/pelayanan/views/riwayat_pdf.php" />
-        <option value="$PROJECT_DIR$/application/modules/pelayanan/views/riwayat.php" />
         <option value="$PROJECT_DIR$/application/modules/pelayanan/views/v_modal_riwayat.php" />
-        <option value="$PROJECT_DIR$/application/modules/pelayanan/controllers/Pelayanan.php" />
-        <option value="$PROJECT_DIR$/application/modules/pelayanan/views/v_pelayanan.php" />
-        <option value="$PROJECT_DIR$/application/modules/pelayanan/views/f_pelayanan.php" />
-        <option value="$PROJECT_DIR$/assets/js/app/pelayanan.js" />
         <option value="$PROJECT_DIR$/application/modules/pos/views/v_pos.php" />
         <option value="$PROJECT_DIR$/assets/pos/pos.css" />
         <option value="$PROJECT_DIR$/readme.rst" />
+        <option value="$PROJECT_DIR$/application/modules/pelayanan/views/f_pelayanan.php" />
+        <option value="$PROJECT_DIR$/assets/js/app/pelayanan.js" />
+        <option value="$PROJECT_DIR$/application/modules/pelayanan/views/v_pelayanan.php" />
+        <option value="$PROJECT_DIR$/application/modules/pelayanan/views/riwayat.php" />
+        <option value="$PROJECT_DIR$/application/modules/pelayanan/views/hasilUji.php" />
+        <option value="$PROJECT_DIR$/application/modules/pelayanan/controllers/Pelayanan.php" />
       </list>
     </option>
   </component>
@@ -236,7 +177,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pos" />
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labkesda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labkesda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labkesda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labkesda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -621,6 +602,32 @@
               <option name="myItemId" value="pelanggan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labkesda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labkesda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pelanggan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -722,16 +729,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../simponiklik" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../komar" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/application/third_party" />
       <recent name="$PROJECT_DIR$/application/libraries" />
       <recent name="$PROJECT_DIR$/assets/js" />
       <recent name="$PROJECT_DIR$/application/modules/pelayanan/views" />
-      <recent name="$PROJECT_DIR$/application/modules" />
     </key>
   </component>
   <component name="RunManager">
@@ -776,8 +783,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="724" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="724" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2819063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -839,14 +846,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/modules/sub_gol_tindakan/views/v_sub_gol_tindakan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="42.791668">
-          <caret line="35" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/kegiatan_rapat/controllers/Kegiatan_rapat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1064,14 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pelanggan/views/f_pelanggan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.074394">
-          <caret line="88" column="26" selection-start-line="73" selection-start-column="20" selection-end-line="88" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/tindakan/views/f_tindakan.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62283736">
@@ -1090,22 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.5">
           <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pelanggan/controllers/Pelanggan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-70.625">
-          <caret line="200" column="65" selection-start-line="200" selection-start-column="12" selection-end-line="200" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pos/views/detail_masuk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="35" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,123 +1124,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/views/riwayat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76724136">
-          <caret line="137" column="42" selection-start-line="137" selection-start-column="37" selection-end-line="137" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#5;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#div#0;n#!!top" expanded="true" />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516536167556" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/controllers/Pelayanan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.2916665">
-          <caret line="227" column="36" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="36" />
-          <folding>
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1516593541757" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/views/v_pelayanan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375">
-          <caret line="52" column="68" selection-start-line="52" selection-start-column="68" selection-end-line="52" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/views/f_pelayanan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.9166665">
-          <caret line="324" column="134" selection-start-line="324" selection-start-column="134" selection-end-line="324" selection-end-column="134" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#3;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/app/pelayanan.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8509934">
-          <caret line="118" column="4" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#52#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pos/controllers/Pos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.916666">
-          <caret line="318" column="53" selection-start-line="318" selection-start-column="53" selection-end-line="318" selection-end-column="53" />
-          <folding>
-            <marker date="1516202877417" expanded="true" signature="9541:9600" placeholder="SELECT * FRO..trkasir_detail..." />
-            <marker date="1516202877417" expanded="true" signature="12047:12113" placeholder="SELECT * FRO..trkasir_detail..." />
-            <marker date="1516202877417" expanded="true" signature="12578:12651" placeholder="SELECT * FRO..mst_tindakan..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/pos/pos.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.2222223">
@@ -1274,29 +1132,149 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/readme.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7201987">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71034485">
+          <caret line="249" column="65" selection-start-line="249" selection-start-column="65" selection-end-line="249" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/app/pos.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="163" column="7" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
+          <caret line="266" column="46" selection-start-line="266" selection-start-column="38" selection-end-line="266" selection-end-column="46" />
           <folding>
             <element signature="e#0#52#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/pos/views/v_pos.php">
+    <entry file="file://$PROJECT_DIR$/assets/js/app/pelayanan.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.166666">
-          <caret line="249" column="65" selection-start-line="249" selection-start-column="65" selection-end-line="249" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.6274834">
+          <caret line="146" column="36" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#52#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/views/v_pelayanan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.2327585">
+          <caret line="261" column="64" selection-start-line="261" selection-start-column="64" selection-end-line="261" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.rst">
+    <entry file="file://$PROJECT_DIR$/application/modules/pelanggan/controllers/Pelanggan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76986754">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        <state vertical-scroll-proportion="1.862069">
+          <caret line="200" column="65" selection-start-line="200" selection-start-column="12" selection-end-line="200" selection-end-column="65" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pelanggan/views/f_pelanggan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.5">
+          <caret line="51" column="230" selection-start-line="51" selection-start-column="145" selection-end-line="51" selection-end-column="230" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/views/riwayat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7241379">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pos/controllers/Pos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.6810346">
+          <caret line="297" column="41" selection-start-line="297" selection-start-column="31" selection-end-line="297" selection-end-column="41" />
+          <folding>
+            <marker date="1516202877417" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..trkasir_detail..." />
+            <marker date="1516202877417" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..trkasir_detail..." />
+            <marker date="1516202877417" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..mst_tindakan..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/views/f_pelayanan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.234483">
+          <caret line="325" column="74" selection-start-line="325" selection-start-column="62" selection-end-line="325" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pos/views/detail_masuk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6465517">
+          <caret line="25" column="6" selection-start-line="22" selection-start-column="12" selection-end-line="25" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/views/hasilUji.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38793105">
+          <caret line="133" column="63" selection-start-line="133" selection-start-column="63" selection-end-line="133" selection-end-column="63" />
+          <folding>
+            <element signature="n#style#0;n#font#0;n#td#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#1;n#td#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
+            <marker date="1516781845271" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516781845271" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516781845271" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516781845271" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516781845271" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516781845271" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516781845271" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516781845271" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/pelayanan/controllers/Pelayanan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8189655">
+          <caret line="492" column="76" selection-start-line="492" selection-start-column="73" selection-end-line="492" selection-end-column="76" />
+          <folding>
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1516782351789" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
