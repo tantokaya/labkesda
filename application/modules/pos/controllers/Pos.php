@@ -43,7 +43,7 @@ class Pos extends MX_Controller {
         $tmpl = array('table_open' => '<table id="tbl-pelanggan" width="100%" class="table table-hover table-bordered table-striped" >');
         $this->table->set_template($tmpl);
 
-        $this->table->set_heading('NIK', 'REKMED', 'NAMA', 'TGL LAHIR','ALAMAT');
+        $this->table->set_heading('NIK', 'REKMED', 'NAMA', 'TGL LAHIR','ALAMAT','AKSI');
 
         #echo '<pre>'; print_r($d); exit;
         $this->template->set_layout('frontoffice')->title('POS - Labkesda')->build('v_pos', $d);
@@ -65,6 +65,7 @@ class Pos extends MX_Controller {
         $data['agama_id']           = $this->input->post('agama_id', true);
         $data['alamat']             = $this->input->post('alamat', true);
         $data['propinsi_id']        = $this->input->post('propinsi_id', true);
+        $data['kota_id']            = $this->input->post('kota_id', true);
         $data['kecamatan_id']       = $this->input->post('kecamatan_id', true);
         $data['kelurahan_id']       = $this->input->post('kelurahan_id', true);
         $data['no_kk']              = !empty($this->input->post('no_kk', true))?$this->input->post('no_kk', true):NULL;
@@ -103,11 +104,12 @@ class Pos extends MX_Controller {
             ->from('mst_pasien');
         $this->datatables->edit_column('nm_lengkap', '<span class="btn-plg" data-kdrekmed="$1" data-nama="$2">$2</span>', 'kode,nm_lengkap');
 
+        $pilih_button = '<button type="button" class="btn btn-primary btn-pilih" data-idpilih="$1" data-namapilih="$2"><i class="icon-download"></i> Pilih</button>';
 //        $edit_button = '<li><a href="'.base_url('pasien/edit/$1').'"><i class="icon-pencil6"></i> Ubah</a></li>';
 //        $delete_button =  '<li><a href="#" class="btn-delete" data-id="$1"><i class="icon-trash"></i> Hapus</a></li>';
 //        $divider = '<li class="divider"></li>';
 //
-//        $this->datatables->add_column('aksi', '<ul class="icons-list"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a><ul class="dropdown-menu dropdown-menu-right">' . $edit_button . $divider . $delete_button . '</ul></li></ul>' , 'encode(kode)');
+        $this->datatables->add_column('aksi',  $pilih_button , 'kode, nm_lengkap');
 
 
         echo $this->datatables->generate();
@@ -181,6 +183,40 @@ class Pos extends MX_Controller {
     }
 
 
+//  Save Pelanggan Kesmas   //////
+    public function save_pelanggan_k(){
+        $ctime_now      = date('Y-m-d H:i:s');
+
+        $this->db->trans_begin();
+
+        $data['kd_rekmed']          = $this->input->post('kd_rekmed_k', true);
+        $data['nm_instansi']        = $this->input->post('nm_instansi', true);
+        $data['nm_lengkap']         = !empty($this->input->post('nm_lengkap_k', true))?$this->input->post('nm_lengkap_k', true):NULL;
+        $data['alamat']             = $this->input->post('alamat_k', true);
+        $data['propinsi_id']        = $this->input->post('propinsi_id_k', true);
+        $data['kota_id']            = $this->input->post('kota_id_k', true);
+        $data['kecamatan_id']       = $this->input->post('kecamatan_id_k', true);
+        $data['kelurahan_id']       = $this->input->post('kelurahan_id_k', true);
+
+        $data['created_by']         = $this->session->nama;
+        $data['ctime']              = $ctime_now;
+
+        $this->m_pos->save('mst_pasien', $data, true);
+
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            $message                        = "Data pelanggan gagal disimpan!";
+            $type                           = "error";
+        } else {
+            $this->db->trans_commit();
+            $message                        = "Data pelanggan berhasil disimpan!";
+            $type                           = "success";
+        }
+
+        $this->session->set_flashdata(array('notif' => $message, 'type' => $type));
+
+        redirect('pos');
+    }
 
 //////////////    SIMPAN TRANSAKSI   ///////////////////////
 

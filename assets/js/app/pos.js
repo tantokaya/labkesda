@@ -17,6 +17,7 @@ $(document).ready(function(){
         opens: 'right'
     });
 
+///  Kewilayahan Pelanggan Lab  ///
     $('#propinsi_id').on('change', function(){
         var prop_id = $(this).val();
 
@@ -103,7 +104,100 @@ $(document).ready(function(){
         });
     }
 
-    function kosong(){
+//  End of Kewilayahan Lab  ///
+
+
+//  Kewilayahan Pelanggan Kesmas  ///
+    $('#propinsi_id_k').on('change', function(){
+        var prop_id = $(this).val();
+
+        //alert(prop_id);
+        $('#kota_id_k').html('');
+        $('#kecamatan_id_k').html('');
+        $('#kelurahan_id_k').html('');
+
+        getListKota_k({prop_id: prop_id});
+    });
+
+    $('#kota_id_k').on('change', function(){
+        var kota_id = $(this).val();
+
+        $('#kecamatan_id_k').html('');
+        $('#kelurahan_id_k').html('');
+
+        getListKecamatan_k({kota_id: kota_id});
+    });
+
+    $('#kecamatan_id_k').on('change', function(){
+        var kecamatan_id = $(this).val();
+
+        $('#kelurahan_id_k').html('');
+
+        getListKelurahan_k({kecamatan_id: kecamatan_id});
+    });
+
+    function getListKota_k(parameters){
+        var prop_id = parameters.prop_id;
+        var kota_id = parameters.kota_id;
+        $.ajax({
+            type: 'POST',
+            url: baseUrl+'/pos/get_list_kota',
+            data: 'propinsi_id='+prop_id,
+            success: function(res){
+                $('#kota_id_k').html(res);
+                if(kota_id != null){
+                    $('#kota_id_k').select('val', kota_id);
+                }
+            },
+            error: function(e){
+                console.log('Error: '+e);
+            }
+        });
+    }
+
+    function getListKecamatan_k(parameters){
+        var kota_id = parameters.kota_id;
+        var kecamatan_id = parameters.kecamatan_id;
+        $.ajax({
+            type: 'POST',
+            url: baseUrl+'/pos/get_list_kecamatan',
+            data: 'kota_id='+kota_id,
+            success: function(res){
+                $('#kecamatan_id_k').html(res);
+                if(kecamatan_id != null){
+                    $('#kecamatan_id_k').select('val', kecamatan_id);
+                }
+            },
+            error: function(e){
+                console.log('Error: '+e);
+            }
+        });
+    }
+
+    function getListKelurahan_k(parameters){
+        var kecamatan_id = parameters.kecamatan_id;
+        var kelurahan_id = parameters.kelurahan_id;
+        $.ajax({
+            type: 'POST',
+            url: baseUrl+'/pos/get_list_kelurahan',
+            data: 'kecamatan_id='+kecamatan_id,
+            success: function(res){
+                $('#kelurahan_id_k').html(res);
+                if(kelurahan_id != null){
+                    $('#kelurahan_id_k').select('val', kelurahan_id);
+                }
+
+                //if($('#kel_id_tmp').val())$('#kelurahan_id').val($('#kel_id_tmp').val()).trigger('change');
+            },
+            error: function(e){
+                console.log('Error: '+e);
+            }
+        });
+    }
+
+//  End of Kewilayahan Lab  ///
+
+    function kosong_lab(){
         $('#nm_lengkap').val('');
         $('#nik').val('');
         $('#tmp_lahir').val('');
@@ -121,7 +215,7 @@ $(document).ready(function(){
         $('#pekerjaan_id').val('');
         $('#stmarital_id').val('');
     }
- ////////     SIMPAN PELANGGAN     /////////////
+ ////////     SIMPAN PELANGGAN LAB    /////////////
     $("#btn-save-pelanggan").click(function(e){
         e.preventDefault();
         var nik	        = $("#nik").val();
@@ -141,7 +235,7 @@ $(document).ready(function(){
             data	: string,
             cache	: false,
             success	: function(data){
-                kosong();
+                kosong_lab();
                 $("#pelanggan-detail").hide();
                 $("#tabel").show();
                 $("#pelanggan-btn-view").html("<i class='fa fa-user'></i>"+nm_lengkap);
@@ -154,6 +248,47 @@ $(document).ready(function(){
     });
 
 
+    ////////     SIMPAN PELANGGAN  KESMAS   /////////////
+    $("#btn-save-pelanggan_k").click(function(e){
+        e.preventDefault();
+        var kd_rekmed	= $("#kd_rekmed_k").val();
+        var nm_lengkap	= $("#nm_lengkap_k").val();
+
+        var string = $("#frm-pelanggan_k").serialize();
+
+        if(nm_lengkap.length==0){
+            $("#nm_lengkap_k").focus();
+            return;
+        }
+
+        $.ajax({
+            type	: 'POST',
+            url		: baseUrl+'/pos/save_pelanggan_k',
+            data	: string,
+            cache	: false,
+            success	: function(data){
+                kosong_kesmas();
+                $("#pelanggan-detail_k").hide();
+                $("#tabel").show();
+                $("#pelanggan-btn-view").html("<i class='fa fa-user'></i>"+nm_lengkap);
+                $("#pelanggan-btn-view").val(kd_rekmed);
+                $("#pelanggan-view").hide();
+                $("#kasir-view").show();
+            }
+        });
+
+    });
+
+
+    function kosong_kesmas(){
+        $('#nm_lengkap').val('');
+        $('#nm_instansi').val('');
+        $('#alamat').val('');
+        $('#propinsi_id').val('');
+        $('#kota_id').val('');
+        $('#kecamatan_id').val('');
+        $('#kelurahan_id').val('');
+    }
 ////////   SIMPAN TRANSAKSI ////////////
 
     $(".product_btn").click(function(e){
@@ -300,5 +435,6 @@ $(document).ready(function(){
 
 
     });
+
 
 });

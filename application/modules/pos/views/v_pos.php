@@ -18,6 +18,9 @@
         $("#pelanggan-btn-view").click(function () {
             $("#pelanggan-view").show();
             $("#kasir-view").hide();
+            $("#pelanggan-detail_k").hide();
+            $('#tabel').show();
+
         })
 
         $("#pelanggan-btn-hide").click(function () {
@@ -69,7 +72,45 @@
 
     });
 </script>
+<script type="text/javascript">
+    $(document).ready(function () {
 
+        $("#pelanggan-detail").hide();
+        $("#tbl_pelanggan_hide").hide();
+        $("#tbl_pelanggan_show_k_hide").hide();
+
+        $("#tbl_pelanggan_hide").click(function () {
+            $("#tabel").show();
+            $("#tbl_pelanggan_show").show();
+            $("#tbl_pelanggan_hide").hide();
+            $("#pelanggan-detail").hide();
+        })
+
+        $("#tbl_pelanggan_show").click(function () {
+            $("#tabel").hide();
+            $("#tbl_pelanggan_show").hide();
+            $("#tbl_pelanggan_hide").show();
+            $("#pelanggan-detail").show();
+            $("#pelanggan-detail_k").hide();
+            $("#nm_lengkap").focus();
+        })
+
+        $("#tbl_pelanggan_show_k_hide").click(function () {
+            $("#tabel").show();
+            $("#tbl_pelanggan_show_k").show();
+            $("#tbl_pelanggan_show_k_hide").hide();
+            $("#pelanggan-detail_k").hide();
+        })
+        $('#tbl_pelanggan_show_k').click(function(){
+            $("#tabel").hide();
+            $("#tbl_pelanggan_show_k").hide();
+            $("#tbl_pelanggan_show_k_hide").show();
+            $("#pelanggan-detail_k").show();
+        });
+
+
+    });
+</script>
 <!--  View Transaksi kasir  -->
 <div class="pos-content" id="kasir-view">
     <div class="window">
@@ -214,29 +255,6 @@
 <!--  View Pelanggan  -->
 
 <div class="pos-content" id="pelanggan-view">
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            $("#pelanggan-detail").hide();
-            $("#tbl_pelanggan_hide").hide();
-
-            $("#tbl_pelanggan_hide").click(function () {
-                $("#tabel").show();
-                $("#tbl_pelanggan_show").show();
-                $("#tbl_pelanggan_hide").hide();
-                $("#pelanggan-detail").hide();
-            })
-
-            $("#tbl_pelanggan_show").click(function () {
-                $("#tabel").hide();
-                $("#tbl_pelanggan_show").hide();
-                $("#tbl_pelanggan_hide").show();
-                $("#pelanggan-detail").show();
-                $("#nm_lengkap").focus();
-            })
-        });
-    </script>
-
     <div class="window">
         <div class="subwindow">
             <div class="subwindow-container">
@@ -247,18 +265,27 @@
                           <span class="button back" id="pelanggan-btn-hide">
                             <i class="fa fa-angle-double-left"></i> Kembali
                           </span>
+                          <!-- TOmbol Pelanggan Kesmas -->
                           <span class="button new-customer-kesmas" id="tbl_pelanggan_show_k">
                             <i class="fa fa-user"></i><i class="fa fa-plus"></i> Kesmas
                           </span>
+                          <span class="button new-customer-kesmas" id="tbl_pelanggan_show_k_hide">
+                            <i class="fa fa-user"></i><i class="fa fa-plus"></i> Kesmas
+                          </span>
+                          <!-- End of Tombol Pelanggan Kesmas  -->
+
+                          <!-- Tombol Pelanggan Lab -->
                           <span class="button new-customer" id="tbl_pelanggan_show">
                             <i class="fa fa-user"></i><i class="fa fa-plus"></i> Lab
                           </span>
                           <span class="button new-customer" id="tbl_pelanggan_hide">
-                            <i class="fa fa-user"></i><i class="fa fa-plus"></i>
+                            <i class="fa fa-user"></i><i class="fa fa-plus"></i> Lab
                           </span>
+                          <!-- End of Tombol Pelanggan Lab -->
                             </section>
                             <section class="full-content">
                                 <div class="window">
+                                    <!-- Form Pelanggan Lab  -->
                                     <section class="subwindow collapsed" id="pelanggan-detail">
                                         <div class="subwindow-container collapsed">
                                             <div class="subwindow-container-fix client-details-contents">
@@ -272,10 +299,6 @@
                                                            value="<?= isset($pelanggan['nm_lengkap']) ? $pelanggan['nm_lengkap'] : set_value('nm_lengkap'); ?>">
 
                                                     <div class="edit-buttons">
-                                                        <!--<div class="button undo">
-                                                            <i class="fa fa-undo">
-                                                            </i>
-                                                        </div>-->
                                                         <div class="button save" id="btn-save-pelanggan">
                                                             <i class="fa fa-floppy-o">
                                                             </i>
@@ -334,7 +357,7 @@
                                                             <div class="client-detail">
                                                                 <span class="label" style="color: grey; font-size: medium;width: 20%;">Propinsi</span>
                                                                 <?php $pelanggan['propinsi_id'] = isset($pelanggan['propinsi_id']) ? $pelanggan['propinsi_id'] : ''; ?>
-                                                                <select name="propinsi_id" style="height: 35px; width:100%" id="propinsi_id" class="populate" required>
+                                                                <select name="propinsi_id" style="height: 35px;" id="propinsi_id" class="populate" required>
                                                                     <option></option>
                                                                     <?php foreach ($l_propinsi as $t): ?>
                                                                         <?php if ($pelanggan['propinsi_id'] == $t->propinsi_id): ?>
@@ -459,6 +482,111 @@
                                             </div>
                                         </div>
                                     </section>
+                                    <!--  End of Form Pelanggan Lab -->
+                                    <!-- Form Pelangggan Kesmas -->
+                                    <section class="subwindow collapsed" id="pelanggan-detail_k">
+                                        <div class="subwindow-container collapsed">
+                                            <div class="subwindow-container-fix client-details-contents">
+                                                <?= form_open('', array('id' => 'frm-pelanggan_k')); ?>
+                                                <section class="client-details edit">
+                                                    <div class="client-picture">
+                                                        <i class="fa fa-camera"></i>
+                                                        <!--<input class="image-uploader" type="file">-->
+                                                    </div>
+                                                    <input class="client-name" id="nm_lengkap_k" name="nm_lengkap_k"
+                                                           value="<?= isset($pelanggan['nm_lengkap']) ? $pelanggan['nm_lengkap'] : set_value('nm_lengkap'); ?>" placeholder="Nama pemohon...">
+
+                                                    <div class="edit-buttons">
+                                                        <div class="button save" id="btn-save-pelanggan_k">
+                                                            <i class="fa fa-floppy-o">
+                                                            </i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="client-details-box clearfix">
+                                                        <div class="client-details-left">
+                                                            <div class="client-detail">
+                                                                <span class="label" style="color: grey; font-size: medium;width: 20%;">Instansi</span>
+                                                                <?php if ($this->uri->segment(3) == '') { ?>
+                                                                    <input style="text: 40%" type="hidden" name="kd_rekmed_k" id="kd_rekmed_k" value="<?= $kd_rekmed; ?>">
+                                                                <?php } else { ?>
+                                                                    <input style="width: 40%" type="hidden" name="kd_rekmed_k" id="kd_rekmed_k" value="">
+                                                                <?php } ?>
+                                                                <input type="text" name="nm_instansi" id="nm_instansi" value="">
+                                                            </div>
+                                                            <div class="client-detail">
+                                                                <span class="label" style="color: grey; font-size: medium;width: 20%;">Alamat</span>
+                                                                <textarea name="alamat_k" id="alamat_k" rows="3" style="width: 68%"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="client-details-right">
+                                                            <div class="client-detail">
+                                                                <span class="label" style="color: grey; font-size: medium;width: 20%;">Propinsi</span>
+                                                                <?php $pelanggan['propinsi_id'] = isset($pelanggan['propinsi_id']) ? $pelanggan['propinsi_id'] : ''; ?>
+                                                                <select name="propinsi_id_k" style="height: 35px; " id="propinsi_id_k" class="populate" required>
+                                                                    <option></option>
+                                                                    <?php foreach ($l_propinsi as $t): ?>
+                                                                        <?php if ($pelanggan['propinsi_id'] == $t->propinsi_id): ?>
+                                                                            <option value="<?php echo $t->propinsi_id; ?>" selected="selected"><?php echo $t->propinsi; ?></option>
+                                                                        <?php else : ?>
+                                                                            <option value="<?php echo $t->propinsi_id; ?>"><?php echo $t->propinsi; ?></option>
+                                                                        <?php endif; ?>
+                                                                    <?php endforeach; ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="client-detail">
+                                                                <span class="label" style="color: grey; font-size: medium;width: 20%;">Kota</span>
+                                                                <select name="kota_id_k" id="kota_id_k" style="height:35px" required>
+                                                                    <option></option>
+                                                                    <?php if (isset($l_kota)): ?>
+                                                                        <?php foreach ($l_kota as $t): ?>
+                                                                            <?php if ($pelanggan['kota_id'] == $t->kota_id): ?>
+                                                                                <option value="<?php echo $t->kota_id; ?>" selected="selected"><?php echo $t->kota; ?></option>
+                                                                            <?php else : ?>
+                                                                                <option value="<?php echo $t->kota_id; ?>"><?php echo $t->kota; ?></option>
+                                                                            <?php endif; ?>
+                                                                        <?php endforeach; ?>
+                                                                    <?php endif; ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="client-detail">
+                                                                <span class="label" style="color: grey; font-size: medium;width: 20%;">Kecamatan</span>
+                                                                <select name="kecamatan_id_k" id="kecamatan_id_k" style="height: 35px" required>
+                                                                    <option></option>
+                                                                    <?php if (isset($l_kecamatan)): ?>
+                                                                        <?php foreach ($l_kecamatan as $t): ?>
+                                                                            <?php if ($pelanggan['kecamatan_id'] == $t->kecamatan_id): ?>
+                                                                                <option value="<?php echo $t->kecamatan_id; ?>" selected="selected"><?php echo $t->kecamatan; ?></option>
+                                                                            <?php else : ?>
+                                                                                <option value="<?php echo $t->kecamatan_id; ?>"><?php echo $t->kecamatan; ?></option>
+                                                                            <?php endif; ?>
+                                                                        <?php endforeach; ?>
+                                                                    <?php endif; ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="client-detail">
+                                                                <span class="label" style="color: grey; font-size: medium; width: 20%;">Kelurahan</span>
+                                                                <select name="kelurahan_id_k" id="kelurahan_id_k" style="height: 35px" required>
+                                                                    <option></option>
+                                                                    <?php if (isset($l_kelurahan)): ?>
+                                                                        <?php foreach ($l_kelurahan as $t): ?>
+                                                                            <?php if ($pelanggan['kelurahan_id'] == $t->kelurahan_id): ?>
+                                                                                <option value="<?php echo $t->kelurahan_id; ?>" selected="selected"><?php echo $t->kelurahan; ?></option>
+                                                                            <?php else : ?>
+                                                                                <option value="<?php echo $t->kelurahan_id; ?>"><?php echo $t->kelurahan; ?></option>
+                                                                            <?php endif; ?>
+                                                                        <?php endforeach; ?>
+                                                                    <?php endif; ?>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                                <?= form_close(); ?>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- End of Form Pelangggan Kesmas -->
+
                                     <section class="subwindow" id="tabel">
                                         <div class="subwindow-container">
                                             <?php echo $this->table->generate(); ?>
@@ -502,7 +630,7 @@
                                                             },
                                                             {"data": "tgl_lahir", "sName": "tgl_Lahir"},
                                                             {"data": "alamat", "sName": "alamat"},
-
+                                                            {"data":"aksi","class": "text-center", "sWidth":"5%"},
                                                         ],
                                                         "aoColumnDefs": [
                                                             {
@@ -538,22 +666,16 @@
                                                         $("#kasir-view").show();
                                                     });
 
-                                                    $('#tbl-pelanggan').delegate('a.btn-delete', 'click', function (e) {
+                                                    $('#tbl-pelanggan').delegate('.btn-pilih', 'click', function (e) {
                                                         e.preventDefault();
-                                                        var id = $(this).data('id');
-                                                        $.ajax({
-                                                            type: "POST",
-                                                            dataType: "json",
-                                                            url: "<?=base_url('pos/del_pelanggan');?>",
-                                                            data: {id: id},
-                                                            success: function (r) {
-                                                                oTable._fnAjaxUpdate();
-                                                                alert(r.message);
-                                                            },
-                                                            error: function (e) {
-                                                                console.log(e.responseText());
-                                                            }
-                                                        });
+                                                        var that = $(this);
+                                                        var pilih = that.data('idpilih');
+                                                        var pilih_nama = that.data('namapilih');
+
+                                                        $("#pelanggan-btn-view").html("<i class='fa fa-user'></i>" + pilih_nama);
+                                                        $("#pelanggan-btn-view").val(pilih);
+                                                        $("#pelanggan-view").hide();
+                                                        $("#kasir-view").show();
 
                                                     });
 
