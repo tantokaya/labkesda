@@ -436,5 +436,29 @@ $(document).ready(function(){
 
     });
 
+////////// Tombol Cetak Kwitansi  ///////////
+
+    // Cetak PDF
+    $('.print-nota').click(function(e) {
+        e.preventDefault();
+        var kode    = $('#trkasir_id').val();
+
+        if(kode.length == 0){
+            alert('Data tidak ada !!!');
+
+            return;
+        }else{
+            var a = window.open(baseUrl+'/pos/nota/'+kode);
+
+            a.onload = function() {
+                var isi = a.document.body.innerHTML;
+                if(isi == '') {
+                    alert("Tidak ada datanya");
+                    a.close();
+                }
+            };
+            return;
+        }
+    });
 
 });

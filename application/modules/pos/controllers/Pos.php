@@ -363,4 +363,36 @@ class Pos extends MX_Controller {
         }
 
     }
+
+    //// Nota
+    public function nota(){
+        $id     = $this->uri->segment(3);
+
+        $tgl_cetak = gmdate("d-m-Y H:m", time()+60*60*7);
+
+        $d['judul']         = 'LAPORAN BSC';
+        $d['tgl_cetak']     = $tgl_cetak;
+
+        $cek = $this->m_pos->fetch('trkasir_detail td', array('td.trkasir_id' => $id), NULL, 'mst_tindakan mt','mt.kd_tindakan = td.kd_tindakan');
+
+        $d['kasir']     = $cek->result_array();
+        $d['kasir_row'] = $cek->row_array();
+
+        $d['kd_rekmed_h']   = $this->m_pos->fetch('trkasir_header', ['trkasir_id' => $d['kasir_row']['trkasir_id']])->row_array();
+        $d['pasien']        = $this->m_pos->fetch('mst_pasien',['kd_rekmed' => $d['kd_rekmed_h']['pelanggan']])->row_array();
+        $d['gol_tindakan']  = $this->m_pos->fetch('mst_gol_tindakan', ['gol_tindakan_id' => $d['kd_rekmed_h']['gol_tindakan_id']])->row_array();
+
+        $d['l_jk']          = $this->m_pos->fetch('jenis_kelamin', ['jenis_kelamin_id' => $d['pasien']['jk_id']])->row_array();
+
+        #echo $this->db->last_query(); exit();
+        #echo '<pre>';print_r($d); exit;
+
+        $this->load->view('nota',$d);
+        $html = $this->output->get_output();
+        $this->load->library('dompdf_gen');
+        $this->dompdf->load_html($html);
+        $this->dompdf->set_paper("A4","portrait");
+        $this->dompdf->render();
+        $this->dompdf->stream('BUKTI BAYAR _'.date("d/m/Y H-i-s").'.pdf');
+    }
 }

@@ -51,12 +51,16 @@
             $("#pembayaran-view").hide();
         })
         $('#pembayaran').hide();
-        $('.paymentmethods').click(function(){
+        $('.bayar').click(function(e){
+            e.preventDefault();
+            var that = $(this);
+
             $('.paymentlines-empty').hide() ;
             $('#pembayaran').show();
-            $('#metode').html($('.paymentmethod').html());
+            $('#metode').html(that.data('crbayarnama'));
             $('#ttl_bayar').html($('.total').html());
             $('#ttl_bayar_input').focus();
+            $('#ttl_bayar_input').val($('.total').html());
             $('.payment-buttons').show();
         });
 
@@ -192,10 +196,10 @@
                                                   </span>
                                                 </span>
                                                 </div>
-                                                <div class="searchbox">
+                                                <!--<div class="searchbox">
                                                     <input placeholder="Cari Produk">
                                                     <span class="search-clear"></span>
-                                                </div>
+                                                </div>-->
                                             </header>
                                             <div class="categories">
                                                 <div class="category-list-scroller touch-scrollable">
@@ -716,7 +720,9 @@
                                 <div class="paymentmethods-container">
                                     <div class="paymentmethods">
                                         <?php foreach ($crbayar as $byr): ?>
-                                        <div class="button paymentmethod"><?= $byr->crbayar_nama; ?></div>
+                                        <div class="button paymentmethod">
+                                            <span class="bayar" style="min-width:100%; min-height:auto; display: block" data-crbayarnama="<?= $byr->crbayar_nama; ?>"><?= $byr->crbayar_nama; ?></span>
+                                        </div>
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
@@ -807,21 +813,23 @@
                     </span>
                             </div>
                             <div class="centered-content touch-scrollable">
-                                <div class="button print">
+                                <div class="button print-nota">
                                     <i class="fa fa-print"></i> Cetakan tanda terima
                                 </div>
                                 <div class="pos-receipt-container">
                                     <div class="pos-sale-ticket">
                                         <div class="pos-center-align"><?= $tgl_cetak.'        '.$trkasir_id; ?> </div>
+                                        <input type="hidden" name="trkasir_id" id="trkasir_id" value="<?=$trkasir_id;?>">
                                         <br>LABKESDA<br>
                                         <div class="receipt-phone">
+                                            <?php $user = $this->setting_model->get_user_info($this->session->user_id); ?>
                                         </div>
                                         <div class="receipt-user">
-                                            <?= 'Pengguna : ';?><br>
+                                            <?= 'Pengguna : '.$user['nama'];?><br>
                                         </div>
                                         <br>
 
-                                        <table class="receipt-orderlines">
+                                        <!--<table class="receipt-orderlines">
                                             <colgroup>
                                                 <col width="50%">
                                                 <col width="25%">
@@ -864,7 +872,7 @@
                                                 <td>Kembalian:</td><td class="pos-right-align">Rp 0,00</td>
                                             </tr>
                                             </tbody>
-                                        </table>
+                                        </table>-->
                                     </div>
                                 </div>
                             </div>
